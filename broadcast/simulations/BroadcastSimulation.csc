@@ -176,7 +176,7 @@
   <plugin>
     se.sics.cooja.plugins.LogListener
     <plugin_config>
-      <filter>received the new</filter>
+      <filter />
       <formatted_time />
       <coloring />
     </plugin_config>

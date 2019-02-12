@@ -18,7 +18,7 @@ implementation {
   */ 
   message_t* packet;
   bool locked;
-  uint16_t counter = 0;
+  uint8_t counter = 0;
   
   /* 
   * Events

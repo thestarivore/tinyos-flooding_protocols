@@ -19,7 +19,7 @@ implementation {
   */
   message_t packet;
   bool locked;
-  uint16_t counter = 1;
+  uint8_t counter = 1;
 
   /* 
   * Events
@@ -56,6 +56,7 @@ implementation {
     }
 
     nm->packet_id = counter;
+    nm->packet_content[1] = counter;
     counter++;
     
     // send the packet
@@ -78,6 +79,7 @@ implementation {
 
   // event fired when send is done
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
+    /* This test is needed because if two components wire to the same AMSend, both will receive a sendDone event after either component issues a send command. Since a component writer has no way to enforce that her component will not be used in this manner, a defensive style of programming that verifies that the sent message is the same one that is being signaled is required. From http://tinyos.stanford.edu/tinyos-wiki/index.php/Mote-mote_radio_communication */
     if (&packet == bufPtr) {
       printf("SinkC: Packet sent\n");
       locked = FALSE;

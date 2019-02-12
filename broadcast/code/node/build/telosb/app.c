@@ -159,13 +159,6 @@ static __inline uint8_t __nesc_hton_leuint8(void * target, uint8_t value)  ;
 static __inline int8_t __nesc_ntoh_int8(const void * source)  ;
 #line 303
 static __inline int8_t __nesc_hton_int8(void * target, int8_t value)  ;
-
-
-
-
-
-
-static __inline uint16_t __nesc_ntoh_uint16(const void * source)  ;
 #line 322
 static __inline uint16_t __nesc_ntoh_leuint16(const void * source)  ;
 
@@ -776,10 +769,11 @@ int __attribute((format(printf, 1, 2))) printf(const char *string, ...);
 
 
 int putchar(int c);
-# 6 "Node.h"
+# 7 "Node.h"
 #line 4
 typedef nx_struct node_msg {
-  nx_uint16_t packet_id;
+  nx_uint8_t packet_id;
+  nx_uint8_t packet_content[1];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -3225,7 +3219,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/home/user/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x40f54ee4);
+uint8_t arg_0x40f53ee4);
 # 82 "/home/user/tinyos-main/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow(void );
 # 52 "/home/user/tinyos-main/tos/interfaces/Random.nc"
@@ -3787,7 +3781,7 @@ uint8_t len);
 # 19 "NodeC.nc"
 message_t *NodeC__packet;
 bool NodeC__locked;
-uint16_t NodeC__counter = 0;
+uint8_t NodeC__counter = 0;
 
 
 
@@ -7223,7 +7217,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/home/user/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x40f54ee4);
+uint8_t arg_0x40f53ee4);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4344 {
 #line 71
@@ -14341,9 +14335,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/home/user/tinyos-main/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x40f54ee4){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x40f53ee4){
 #line 83
-    /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x40f54ee4);
+    /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x40f53ee4);
 #line 83
 }
 #line 83
@@ -14491,16 +14485,6 @@ inline static message_t * CC2420ActiveMessageP__Snoop__receive(am_id_t arg_0x410
 #line 78
 }
 #line 78
-# 310 "/usr/lib/ncc/nesc_nx.h"
-static __inline  uint16_t __nesc_ntoh_uint16(const void * source)
-#line 310
-{
-  const uint8_t *base = source;
-
-#line 312
-  return ((uint16_t )base[0] << 8) | base[1];
-}
-
 # 80 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
 inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x40768ed4, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
@@ -14692,14 +14676,14 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
 
 
 
-      if (__nesc_ntoh_uint16(nm->packet_id.nxdata) <= NodeC__counter) {
+      if (__nesc_ntoh_uint8(nm->packet_id.nxdata) <= NodeC__counter) {
 
-          printf("NodeC: Node %d already received the packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint16(nm->packet_id.nxdata));
+          printf("NodeC: Node %d already received the packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint8(nm->packet_id.nxdata));
         }
       else 
 #line 70
         {
-          printf("NodeC: Node %d received the new packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint16(nm->packet_id.nxdata));
+          printf("NodeC: Node %d received the new packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint8(nm->packet_id.nxdata));
 
 
           if (NodeC__locked) {
@@ -14714,7 +14698,7 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
 
               NodeC__packet = bufPtr;
               if (NodeC__AMSend__send(AM_BROADCAST_ADDR, bufPtr, sizeof(node_msg_t )) == SUCCESS) {
-                  printf("NodeC: P: %d broadcasting packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint16(nm->packet_id.nxdata));
+                  printf("NodeC: P: %d broadcasting packet %d.\n", TOS_NODE_ID, __nesc_ntoh_uint8(nm->packet_id.nxdata));
                   NodeC__locked = TRUE;
                 }
               else 
