@@ -1,0 +1,57 @@
+00:04.156	ID:8	NodeC: Booting device 8.
+00:04.160	ID:8	NodeC: AM started on device 8.
+00:04.320	ID:2	NodeC: Booting device 2.
+00:04.323	ID:2	NodeC: AM started on device 2.
+00:04.334	ID:6	NodeC: Booting device 6.
+00:04.337	ID:6	NodeC: AM started on device 6.
+00:04.432	ID:4	NodeC: Booting device 4.
+00:04.435	ID:4	NodeC: AM started on device 4.
+00:04.466	ID:1	SinkC: Booting device 1.
+00:04.469	ID:1	SinkC: AM started on device 1.
+00:04.470	ID:1	SinkC: Start sending data.
+00:04.485	ID:7	NodeC: Booting device 7.
+00:04.489	ID:7	NodeC: AM started on device 7.
+00:04.792	ID:9	NodeC: Booting device 9.
+00:04.795	ID:9	NodeC: AM started on device 9.
+00:04.799	ID:5	NodeC: Booting device 5.
+00:04.802	ID:5	NodeC: AM started on device 5.
+00:04.983	ID:3	NodeC: Booting device 3.
+00:04.986	ID:3	NodeC: AM started on device 3.
+01:03.066	ID:1	SinkC: P: Broadcasting packet 1.
+01:03.071	ID:1	SinkC: Packet sent
+01:03.074	ID:3	NodeC: Node 3 received packet of length 2.
+01:03.074	ID:5	NodeC: Node 5 received packet of length 2.
+01:03.074	ID:4	NodeC: Node 4 received packet of length 2.
+01:03.074	ID:2	NodeC: Node 2 received packet of length 2.
+01:03.076	ID:3	NodeC: Node 3 received the new packet 1.
+01:03.076	ID:5	NodeC: Node 5 received the new packet 1.
+01:03.076	ID:4	NodeC: Node 4 received the new packet 1.
+01:03.076	ID:2	NodeC: Node 2 received the new packet 1.
+01:03.078	ID:3	NodeC: P: 3 broadcasting packet 1.
+01:03.078	ID:5	NodeC: P: 5 broadcasting packet 1.
+01:03.078	ID:2	NodeC: P: 2 broadcasting packet 1.
+01:03.078	ID:4	NodeC: P: 4 broadcasting packet 1.
+01:03.083	ID:3	NodeC: Packet sent.
+01:03.086	ID:6	NodeC: Node 6 received packet of length 2.
+01:03.086	ID:4	NodeC: Node 4 received packet of length 2.
+01:03.086	ID:2	NodeC: Node 2 received packet of length 2.
+01:03.087	ID:5	NodeC: Packet sent.
+01:03.087	ID:6	NodeC: Node 6 received the new packet 1.
+01:03.089	ID:4	NodeC: Node 4 already received the packet 1.
+01:03.089	ID:2	NodeC: Node 2 already received the packet 1.
+01:03.090	ID:8	NodeC: Node 8 received packet of length 2.
+01:03.090	ID:4	NodeC: Packet sent.
+01:03.090	ID:2	NodeC: Packet sent.
+01:03.091	ID:6	NodeC: P: 6 broadcasting packet 1.
+01:03.092	ID:8	NodeC: Node 8 received the new packet 1.
+01:03.092	ID:6	NodeC: Packet sent.
+01:03.092	ID:4	NodeC: Node 4 received packet of length 2.
+01:03.092	ID:2	NodeC: Node 2 received packet of length 2.
+01:03.094	ID:3	NodeC: Node 3 received packet of length 2.
+01:03.094	ID:4	NodeC: Node 4 already received the packet 1.
+01:03.094	ID:2	NodeC: Node 2 already received the packet 1.
+01:03.095	ID:8	NodeC: P: 8 broadcasting packet 1.
+01:03.096	ID:3	NodeC: Node 3 already received the packet 1.
+01:03.096	ID:8	NodeC: Packet sent.
+01:03.098	ID:5	NodeC: Node 5 received packet of length 2.
+01:03.101	ID:5	NodeC: Node 5 already received the packet 1.

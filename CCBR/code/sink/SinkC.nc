@@ -38,7 +38,7 @@ implementation {
       printf("SinkC: Start sending data.\n"); 
 
       // wait until all nodes are booted and are listening
-      call Timer0.startPeriodic(5000);
+      call Timer0.startPeriodic(60000);
     } else {
       // try to start AM another time
       call AMControl.start();

@@ -17404,7 +17404,7 @@ static inline void SinkC__AMControl__startDone(error_t err)
       printf("SinkC: Start sending data.\n");
 
 
-      SinkC__Timer0__startPeriodic(5000);
+      SinkC__Timer0__startPeriodic(60000);
     }
   else 
 #line 42
