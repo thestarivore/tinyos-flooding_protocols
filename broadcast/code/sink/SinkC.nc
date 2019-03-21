@@ -66,7 +66,7 @@ implementation {
       return;
     } else {
       if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(node_msg_t)) == SUCCESS) {
-        printf("SinkC: P: Broadcasting packet %d.\n", nm->packet_id);
+        printf("SinkC: Broadcasting packet %d\n", nm->packet_id);
         locked = TRUE;
       }
     }

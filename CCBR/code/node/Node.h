@@ -3,7 +3,7 @@
 
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[1];
+  nx_uint8_t packet_content[PACK_SIZE];
 } node_msg_t;
 
 enum {

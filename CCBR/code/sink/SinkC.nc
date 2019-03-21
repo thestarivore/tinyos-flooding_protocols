@@ -51,7 +51,7 @@ implementation {
     node_msg_t* nm = (node_msg_t*) call Packet.getPayload(&packet, sizeof(node_msg_t));
 
     if (nm == NULL) {
-      printf("SinkC: Error during the creation of the packet.\n");
+      printf("SinkC: Error during the creation of the packet\n");
       return;
     }
 
@@ -66,7 +66,7 @@ implementation {
       return;
     } else {
       if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(node_msg_t)) == SUCCESS) {
-        printf("SinkC: P: Broadcasting packet %d.\n", nm->packet_id);
+        printf("SinkC: Broadcasting packet %d\n", nm->packet_id);
         locked = TRUE;
       }
     }
@@ -84,7 +84,7 @@ implementation {
       printf("SinkC: Packet sent\n");
       locked = FALSE;
     } else {
-      printf("SinkC: Packet error.\n");
+      printf("SinkC: Packet error\n");
     }
   }
 }

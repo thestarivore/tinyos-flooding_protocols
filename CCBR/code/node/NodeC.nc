@@ -11,6 +11,7 @@ module NodeC @safe() {
     interface AMSend;
     interface SplitControl as AMControl;
     interface Packet;
+    interface Pool<message_t> as Pool0;
   }
 }
 
@@ -22,7 +23,7 @@ implementation {
   message_t* packet;
   uint16_t packet_id;
   uint16_t delay;
-  bool locked;                      //Node is locked between the time that it starts sending and the time has finished the operation
+  bool locked;        //Node is locked between the time that it starts sending and the time has finished the operation
   
   /* 
   * Events
@@ -58,9 +59,10 @@ implementation {
   * return a packet buffer for the stack to use for the next received packet.
   */
   event message_t* Receive.receive(message_t* bufPtr, void* payload, uint8_t len) {
-    printf("NodeC: Node %d received packet of length %d.\n", TOS_NODE_ID, len);
+    printf("NodeC: received packet of length %d.\n", len);
 
-    if (len != sizeof(node_msg_t)) {
+    if (len != sizeof(node_msg_t) || call Pool0.empty()) {
+      printf("NodeC: Packet error\n");
       return bufPtr;
     } else {
       node_msg_t* nm = (node_msg_t*) payload;
@@ -71,51 +73,55 @@ implementation {
       */
       if (nm->packet_id <= packet_id) {
         // packet already received, do nothing --> abort packet sending on timer 
-        printf("NodeC: Node %d already received the packet %d.\n", TOS_NODE_ID, nm->packet_id);
-
+        printf("NodeC: Already received the packet %d\n", nm->packet_id);
+        return bufPtr;
+      } else {
         //If the same message arrived while we were waiting for timer countdown then abort
         if(nm->packet_id == packet_id){
-          printf("NodeC: P: %d ABORTING packet %d reforwading.\n", TOS_NODE_ID, nm->packet_id);
+          printf("NodeC: ABORTING packet %d reforwading\n", nm->packet_id);
           call Timer0.stop();
           locked = FALSE;
-        }
-      } else { 
-        if (locked) {
           return bufPtr;
-          printf("NodeC: Radio on %d it locked.\n", TOS_NODE_ID);
-        } else {
-          //Lock even while waiting for the timer
-          locked = TRUE;
+        } else { 
+          if (locked) {
+            printf("NodeC: Radio is locked\n");
+            return bufPtr;
+          } else {
+            packet_id = nm->packet_id;
+            //Lock even while waiting for the timer
+            locked = TRUE;
 
-          printf("NodeC: Node %d received the new packet %d.\n", TOS_NODE_ID, nm->packet_id);
-          delay = 500 + (rand() % 500);
-          printf("NodeC: Node %d forwad delayed for %d ms.\n", TOS_NODE_ID, delay);
-          call Timer0.startOneShot(delay); 
-          packet = bufPtr;
-          packet_id = nm->packet_id;
+            printf("NodeC: Received the new packet %d.\n", nm->packet_id);
+            delay = 500 + (rand() % 500);
+            printf("NodeC: Forward delayed for %d ms.\n", delay);
+            call Timer0.startOneShot(delay); 
+            packet = bufPtr;
+            return call Pool0.get();
+          }
         }
       }
     }
-    return bufPtr;
   }
 
   // event fired when the timer is done
   event void Timer0.fired() {
     if (call AMSend.send(AM_BROADCAST_ADDR, packet, sizeof(node_msg_t)) == SUCCESS) {
-      printf("NodeC: P: %d broadcasting packet %d.\n", TOS_NODE_ID, packet_id);
+      printf("NodeC: Broadcasting packet %d\n", packet_id);
     } else {
-      printf("NodeC: An error occured during the broadcast from %d.\n", TOS_NODE_ID);
+      printf("NodeC: An error occured during the broadcast\n");
     }
   }
 
   // event fired when send is done
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
     if (packet == bufPtr) {
-      printf("NodeC: Packet sent.\n");
+      if(error == SUCCESS){
+        printf("NodeC: Packet sent\n");
+      } else {
+        printf("NodeC: Packet send error\n");
+      }
       locked = FALSE;
-    } else {
-      printf("NodeC: Packet error.\n");
+      call Pool0.put(bufPtr);
     }
   }
-
 }
