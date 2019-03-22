@@ -773,7 +773,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[19];
+  nx_uint8_t packet_content[1];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -2798,11 +2798,11 @@ uint8_t reqState);
 # 65 "/home/user/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__ResourceConfigure__unconfigure(
 # 76 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9eedc);
+uint8_t arg_0x40b9eeec);
 # 59 "/home/user/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__ResourceConfigure__configure(
 # 76 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9eedc);
+uint8_t arg_0x40b9eeec);
 # 70 "/home/user/tinyos-main/tos/interfaces/SpiPacket.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__send(
 # 79 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
@@ -2863,23 +2863,23 @@ uint8_t arg_0x40bc47c0);
 # 120 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__release(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 97 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__immediateRequest(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 88 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__request(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 102 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 128 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__isOwner(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 54 "/home/user/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartInterrupts__rxDone(uint8_t data);
 #line 49
@@ -3848,7 +3848,7 @@ static inline void NodeC__AMControl__stopDone(error_t err);
 
 
 static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payload, uint8_t len);
-#line 98
+#line 99
 static void NodeC__AMSend__sendDone(message_t *bufPtr, error_t error);
 # 62 "/home/user/tinyos-main/tos/interfaces/Init.nc"
 static error_t PlatformP__MoteInit__init(void );
@@ -5926,7 +5926,7 @@ uint8_t arg_0x40bc47c0);
 # 102 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(
 # 75 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x40b9e4e4);
+uint8_t arg_0x40b9e4f4);
 # 67 "/home/user/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__signalDone_task__postTask(void );
 # 102 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
@@ -14823,13 +14823,14 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
 
 
 
+
       if (__nesc_ntoh_uint8(nm->packet_id.nxdata) <= NodeC__counter) {
 
           printf("NodeC: Already received the packet %d\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
           return bufPtr;
         }
       else 
-#line 72
+#line 73
         {
 
 
@@ -14838,7 +14839,7 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
               return bufPtr;
             }
           else 
-#line 78
+#line 79
             {
               NodeC__counter++;
               printf("NodeC: Received the new packet %d\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
@@ -14851,7 +14852,7 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
                   NodeC__locked = TRUE;
                 }
               else 
-#line 88
+#line 89
                 {
                   printf("NodeC: An error occured during the broadcast\n");
                 }
@@ -15480,9 +15481,9 @@ static inline void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__defaul
 }
 
 # 102 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
-inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(uint8_t arg_0x40b9e4e4){
+inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(uint8_t arg_0x40b9e4f4){
 #line 102
-  switch (arg_0x40b9e4e4) {
+  switch (arg_0x40b9e4f4) {
 #line 102
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 102
@@ -15492,7 +15493,7 @@ inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__grante
 #line 102
     default:
 #line 102
-      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(arg_0x40b9e4e4);
+      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(arg_0x40b9e4f4);
 #line 102
       break;
 #line 102
@@ -21920,16 +21921,16 @@ static am_addr_t ActiveMessageAddressC__amAddress(void )
   return myAddr;
 }
 
-# 98 "NodeC.nc"
+# 99 "NodeC.nc"
 static void NodeC__AMSend__sendDone(message_t *bufPtr, error_t error)
-#line 98
+#line 99
 {
   if (NodeC__packet == bufPtr) {
       if (error == SUCCESS) {
           printf("NodeC: Packet sent\n");
         }
       else 
-#line 102
+#line 103
         {
           printf("NodeC: Packet send error\n");
         }

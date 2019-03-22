@@ -773,7 +773,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[19];
+  nx_uint8_t packet_content[1];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -14613,7 +14613,7 @@ static inline void SinkC__Timer0__fired(void )
 #line 67
     {
       if (SinkC__AMSend__send(AM_BROADCAST_ADDR, &SinkC__packet, sizeof(node_msg_t )) == SUCCESS) {
-          printf("SinkC: Broadcasting packet %d.\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
+          printf("SinkC: Broadcasting packet %d\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
           SinkC__locked = TRUE;
         }
     }

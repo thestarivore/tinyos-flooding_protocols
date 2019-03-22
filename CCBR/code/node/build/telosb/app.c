@@ -776,7 +776,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[19];
+  nx_uint8_t packet_content[1];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -14973,9 +14973,9 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
 
                   NodeC__locked = TRUE;
 
-                  printf("NodeC: received the new packet %d.\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
+                  printf("NodeC: Received the new packet %d.\n", __nesc_ntoh_uint8(nm->packet_id.nxdata));
                   NodeC__delay = 500 + rand() % 500;
-                  printf("NodeC: forwad delayed for %d ms.\n", NodeC__delay);
+                  printf("NodeC: Forward delayed for %d ms.\n", NodeC__delay);
                   NodeC__Timer0__startOneShot(NodeC__delay);
                   NodeC__packet = bufPtr;
                   return NodeC__Pool0__get();
