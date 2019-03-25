@@ -773,7 +773,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[1];
+  nx_uint8_t packet_content[19];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
