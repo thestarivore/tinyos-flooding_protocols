@@ -80,8 +80,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>1.5308084989341915E-15</x>
-        <y>25.0</y>
+        <x>1.2246467991473533E-15</x>
+        <y>20.0</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -94,8 +94,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>-25.0</x>
-        <y>3.061616997868383E-15</y>
+        <x>-20.0</x>
+        <y>2.4492935982947065E-15</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -108,8 +108,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>-4.592425496802574E-15</x>
-        <y>-25.0</y>
+        <x>-3.673940397442059E-15</x>
+        <y>-20.0</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -122,8 +122,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>25.0</x>
-        <y>-6.123233995736766E-15</y>
+        <x>20.0</x>
+        <y>-4.898587196589413E-15</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -136,22 +136,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>35.35533905932738</x>
-        <y>35.35533905932737</y>
-        <z>0.0</z>
-      </interface_config>
-      <interface_config>
-        se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>6</id>
-      </interface_config>
-      <motetype_identifier>sky2</motetype_identifier>
-    </mote>
-    <mote>
-      <breakpoints />
-      <interface_config>
-        se.sics.cooja.interfaces.Position
-        <x>3.061616997868383E-15</x>
-        <y>50.0</y>
+        <x>2.4492935982947065E-15</x>
+        <y>40.0</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -164,22 +150,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>-35.35533905932737</x>
-        <y>35.35533905932738</y>
-        <z>0.0</z>
-      </interface_config>
-      <interface_config>
-        se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>8</id>
-      </interface_config>
-      <motetype_identifier>sky2</motetype_identifier>
-    </mote>
-    <mote>
-      <breakpoints />
-      <interface_config>
-        se.sics.cooja.interfaces.Position
-        <x>-50.0</x>
-        <y>6.123233995736766E-15</y>
+        <x>-40.0</x>
+        <y>4.898587196589413E-15</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -192,22 +164,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>-35.355339059327385</x>
-        <y>-35.35533905932737</y>
-        <z>0.0</z>
-      </interface_config>
-      <interface_config>
-        se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>10</id>
-      </interface_config>
-      <motetype_identifier>sky2</motetype_identifier>
-    </mote>
-    <mote>
-      <breakpoints />
-      <interface_config>
-        se.sics.cooja.interfaces.Position
-        <x>-9.184850993605149E-15</x>
-        <y>-50.0</y>
+        <x>-7.347880794884118E-15</x>
+        <y>-40.0</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -220,22 +178,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>35.35533905932737</x>
-        <y>-35.355339059327385</y>
-        <z>0.0</z>
-      </interface_config>
-      <interface_config>
-        se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>12</id>
-      </interface_config>
-      <motetype_identifier>sky2</motetype_identifier>
-    </mote>
-    <mote>
-      <breakpoints />
-      <interface_config>
-        se.sics.cooja.interfaces.Position
-        <x>50.0</x>
-        <y>-1.2246467991473532E-14</y>
+        <x>40.0</x>
+        <y>-9.797174393178826E-15</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -263,7 +207,7 @@
       <skin>se.sics.cooja.plugins.skins.AddressVisualizerSkin</skin>
       <skin>se.sics.cooja.plugins.skins.TrafficVisualizerSkin</skin>
       <skin>se.sics.cooja.plugins.skins.UDGMVisualizerSkin</skin>
-      <viewport>3.481818181818181 0.0 0.0 3.481818181818181 191.0 284.0</viewport>
+      <viewport>4.3522727272727275 0.0 0.0 4.3522727272727275 191.0 284.0</viewport>
     </plugin_config>
     <width>395</width>
     <z>0</z>
@@ -296,10 +240,6 @@
       <mote>6</mote>
       <mote>7</mote>
       <mote>8</mote>
-      <mote>9</mote>
-      <mote>10</mote>
-      <mote>11</mote>
-      <mote>12</mote>
       <showRadioRXTX />
       <showRadioHW />
       <showLEDs />

@@ -15,7 +15,7 @@
       <transmitting_range>50.0</transmitting_range>
       <interference_range>50.0</interference_range>
       <success_ratio_tx>0.8</success_ratio_tx>
-      <success_ratio_rx>0.8</success_ratio_rx>
+      <success_ratio_rx>0.0</success_ratio_rx>
     </radiomedium>
     <events>
       <logoutput>40000</logoutput>
@@ -142,7 +142,7 @@
       </interface_config>
       <interface_config>
         se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>6</id>
+        <id>7</id>
       </interface_config>
       <motetype_identifier>sky2</motetype_identifier>
     </mote>
@@ -156,7 +156,7 @@
       </interface_config>
       <interface_config>
         se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>7</id>
+        <id>9</id>
       </interface_config>
       <motetype_identifier>sky2</motetype_identifier>
     </mote>
@@ -170,7 +170,7 @@
       </interface_config>
       <interface_config>
         se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>8</id>
+        <id>11</id>
       </interface_config>
       <motetype_identifier>sky2</motetype_identifier>
     </mote>
@@ -184,7 +184,7 @@
       </interface_config>
       <interface_config>
         se.sics.cooja.mspmote.interfaces.MspMoteID
-        <id>9</id>
+        <id>13</id>
       </interface_config>
       <motetype_identifier>sky2</motetype_identifier>
     </mote>
