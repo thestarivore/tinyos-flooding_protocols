@@ -1,0 +1,820 @@
+00:04.159	ID:11	NodeC: Booting device 11.
+00:04.163	ID:11	NodeC: AM started on device 11.
+00:04.322	ID:2	NodeC: Booting device 2.
+00:04.326	ID:2	NodeC: AM started on device 2.
+00:04.337	ID:7	NodeC: Booting device 7.
+00:04.340	ID:7	NodeC: AM started on device 7.
+00:04.435	ID:4	NodeC: Booting device 4.
+00:04.438	ID:4	NodeC: AM started on device 4.
+00:04.466	ID:1	SinkC: Booting device 1.
+00:04.469	ID:1	SinkC: AM started on device 1.
+00:04.470	ID:1	SinkC: Start sending data.
+00:04.488	ID:9	NodeC: Booting device 9.
+00:04.491	ID:9	NodeC: AM started on device 9.
+00:04.795	ID:13	NodeC: Booting device 13.
+00:04.798	ID:13	NodeC: AM started on device 13.
+00:04.801	ID:5	NodeC: Booting device 5.
+00:04.805	ID:5	NodeC: AM started on device 5.
+00:04.986	ID:3	NodeC: Booting device 3.
+00:04.989	ID:3	NodeC: AM started on device 3.
+01:03.066	ID:1	SinkC: Broadcasting packet 1
+01:03.071	ID:1	SinkC: Packet sent
+02:01.660	ID:1	SinkC: Broadcasting packet 2
+02:01.664	ID:1	SinkC: Packet sent
+02:01.666	ID:2	NodeC: received packet of length 2.
+02:01.666	ID:4	NodeC: received packet of length 2.
+02:01.668	ID:2	NodeC: Received the new packet 2.
+02:01.668	ID:4	NodeC: Received the new packet 2.
+02:01.669	ID:2	NodeC: Forward delayed for 463 ms.
+02:01.669	ID:4	NodeC: Forward delayed for 617 ms.
+02:02.124	ID:2	NodeC: Broadcasting packet 2
+02:02.131	ID:2	NodeC: Packet sent
+02:02.274	ID:4	NodeC: Broadcasting packet 2
+02:02.282	ID:4	NodeC: Packet sent
+03:00.254	ID:1	SinkC: Broadcasting packet 3
+03:00.255	ID:1	SinkC: Packet sent
+03:00.257	ID:2	NodeC: received packet of length 2.
+03:00.257	ID:3	NodeC: received packet of length 2.
+03:00.259	ID:2	NodeC: Received the new packet 3.
+03:00.259	ID:3	NodeC: Received the new packet 3.
+03:00.261	ID:2	NodeC: Forward delayed for 780 ms.
+03:00.261	ID:3	NodeC: Forward delayed for 540 ms.
+03:00.790	ID:3	NodeC: Broadcasting packet 3
+03:00.795	ID:3	NodeC: Packet sent
+03:00.797	ID:9	NodeC: received packet of length 2.
+03:00.799	ID:9	NodeC: Received the new packet 3.
+03:00.800	ID:9	NodeC: Forward delayed for 430 ms.
+03:01.025	ID:2	NodeC: Broadcasting packet 3
+03:01.026	ID:2	NodeC: Packet sent
+03:01.222	ID:9	NodeC: Broadcasting packet 3
+03:01.226	ID:9	NodeC: Packet sent
+03:01.228	ID:3	NodeC: received packet of length 2.
+03:01.230	ID:3	NodeC: Already received the packet 3
+03:58.848	ID:1	SinkC: Broadcasting packet 4
+03:58.849	ID:1	SinkC: Packet sent
+04:57.441	ID:1	SinkC: Broadcasting packet 5
+04:57.449	ID:1	SinkC: Packet sent
+05:56.035	ID:1	SinkC: Broadcasting packet 6
+05:56.045	ID:1	SinkC: Packet sent
+05:56.047	ID:2	NodeC: received packet of length 2.
+05:56.048	ID:2	NodeC: Received the new packet 6.
+05:56.050	ID:2	NodeC: Forward delayed for 253 ms.
+05:56.299	ID:2	NodeC: Broadcasting packet 6
+05:56.303	ID:2	NodeC: Packet sent
+06:54.629	ID:1	SinkC: Broadcasting packet 7
+06:54.635	ID:1	SinkC: Packet sent
+06:54.636	ID:3	NodeC: received packet of length 2.
+06:54.636	ID:4	NodeC: received packet of length 2.
+06:54.638	ID:4	NodeC: Received the new packet 7.
+06:54.638	ID:3	NodeC: Received the new packet 7.
+06:54.640	ID:4	NodeC: Forward delayed for 266 ms.
+06:54.640	ID:3	NodeC: Forward delayed for 273 ms.
+06:54.901	ID:4	NodeC: Broadcasting packet 7
+06:54.908	ID:3	NodeC: Broadcasting packet 7
+06:54.911	ID:4	NodeC: Packet sent
+06:54.913	ID:11	NodeC: received packet of length 2.
+06:54.914	ID:11	NodeC: Received the new packet 7.
+06:54.916	ID:3	NodeC: Packet sent
+06:54.916	ID:11	NodeC: Forward delayed for 48 ms.
+06:54.965	ID:11	NodeC: Broadcasting packet 7
+06:54.970	ID:11	NodeC: Packet sent
+06:54.972	ID:4	NodeC: received packet of length 2.
+06:54.973	ID:4	NodeC: Already received the packet 7
+07:53.222	ID:1	SinkC: Broadcasting packet 8
+07:53.228	ID:1	SinkC: Packet sent
+08:51.817	ID:1	SinkC: Broadcasting packet 9
+08:51.818	ID:1	SinkC: Packet sent
+08:51.820	ID:2	NodeC: received packet of length 2.
+08:51.820	ID:3	NodeC: received packet of length 2.
+08:51.821	ID:3	NodeC: Received the new packet 9.
+08:51.821	ID:2	NodeC: Received the new packet 9.
+08:51.823	ID:3	NodeC: Forward delayed for 562 ms.
+08:51.823	ID:2	NodeC: Forward delayed for 734 ms.
+08:52.374	ID:3	NodeC: Broadcasting packet 9
+08:52.376	ID:3	NodeC: Packet sent
+08:52.542	ID:2	NodeC: Broadcasting packet 9
+08:52.544	ID:2	NodeC: Packet sent
+08:52.546	ID:7	NodeC: received packet of length 2.
+08:52.547	ID:7	NodeC: Received the new packet 9.
+08:52.549	ID:7	NodeC: Forward delayed for 812 ms.
+08:53.344	ID:7	NodeC: Broadcasting packet 9
+08:53.354	ID:7	NodeC: Packet sent
+09:50.411	ID:1	SinkC: Broadcasting packet 10
+09:50.412	ID:1	SinkC: Packet sent
+09:50.414	ID:5	NodeC: received packet of length 2.
+09:50.415	ID:5	NodeC: Received the new packet 10.
+09:50.417	ID:5	NodeC: Forward delayed for 158 ms.
+09:50.574	ID:5	NodeC: Broadcasting packet 10
+09:50.583	ID:5	NodeC: Packet sent
+10:49.004	ID:1	SinkC: Broadcasting packet 11
+10:49.011	ID:1	SinkC: Packet sent
+11:47.598	ID:1	SinkC: Broadcasting packet 12
+11:47.605	ID:1	SinkC: Packet sent
+11:47.606	ID:2	NodeC: received packet of length 2.
+11:47.608	ID:2	NodeC: Received the new packet 12.
+11:47.610	ID:2	NodeC: Forward delayed for 595 ms.
+11:48.193	ID:2	NodeC: Broadcasting packet 12
+11:48.202	ID:2	NodeC: Packet sent
+12:46.191	ID:1	SinkC: Broadcasting packet 13
+12:46.198	ID:1	SinkC: Packet sent
+12:46.200	ID:5	NodeC: received packet of length 2.
+12:46.202	ID:5	NodeC: Received the new packet 13.
+12:46.204	ID:5	NodeC: Forward delayed for 795 ms.
+12:46.982	ID:5	NodeC: Broadcasting packet 13
+12:46.989	ID:5	NodeC: Packet sent
+13:44.785	ID:1	SinkC: Broadcasting packet 14
+13:44.793	ID:1	SinkC: Packet sent
+13:44.795	ID:5	NodeC: received packet of length 2.
+13:44.797	ID:5	NodeC: Received the new packet 14.
+13:44.798	ID:5	NodeC: Forward delayed for 108 ms.
+13:44.906	ID:5	NodeC: Broadcasting packet 14
+13:44.914	ID:5	NodeC: Packet sent
+14:43.379	ID:1	SinkC: Broadcasting packet 15
+14:43.388	ID:1	SinkC: Packet sent
+14:43.390	ID:3	NodeC: received packet of length 2.
+14:43.392	ID:3	NodeC: Received the new packet 15.
+14:43.393	ID:3	NodeC: Forward delayed for 227 ms.
+14:43.617	ID:3	NodeC: Broadcasting packet 15
+14:43.620	ID:3	NodeC: Packet sent
+14:43.622	ID:9	NodeC: received packet of length 2.
+14:43.623	ID:9	NodeC: Received the new packet 15.
+14:43.625	ID:9	NodeC: Forward delayed for 303 ms.
+14:43.923	ID:9	NodeC: Broadcasting packet 15
+14:43.933	ID:9	NodeC: Packet sent
+14:43.935	ID:3	NodeC: received packet of length 2.
+14:43.937	ID:3	NodeC: Already received the packet 15
+15:41.973	ID:1	SinkC: Broadcasting packet 16
+15:41.976	ID:1	SinkC: Packet sent
+15:41.978	ID:2	NodeC: received packet of length 2.
+15:41.980	ID:2	NodeC: Received the new packet 16.
+15:41.982	ID:2	NodeC: Forward delayed for 312 ms.
+15:42.288	ID:2	NodeC: Broadcasting packet 16
+15:42.291	ID:2	NodeC: Packet sent
+16:40.566	ID:1	SinkC: Broadcasting packet 17
+16:40.570	ID:1	SinkC: Packet sent
+17:39.160	ID:1	SinkC: Broadcasting packet 18
+17:39.165	ID:1	SinkC: Packet sent
+18:37.754	ID:1	SinkC: Broadcasting packet 19
+18:37.761	ID:1	SinkC: Packet sent
+19:36.348	ID:1	SinkC: Broadcasting packet 20
+19:36.350	ID:1	SinkC: Packet sent
+19:36.351	ID:2	NodeC: received packet of length 2.
+19:36.351	ID:4	NodeC: received packet of length 2.
+19:36.353	ID:2	NodeC: Received the new packet 20.
+19:36.353	ID:4	NodeC: Received the new packet 20.
+19:36.355	ID:2	NodeC: Forward delayed for 809 ms.
+19:36.355	ID:4	NodeC: Forward delayed for 835 ms.
+19:37.147	ID:2	NodeC: Broadcasting packet 20
+19:37.153	ID:2	NodeC: Packet sent
+19:37.173	ID:4	NodeC: Broadcasting packet 20
+19:37.178	ID:4	NodeC: Packet sent
+20:34.941	ID:1	SinkC: Broadcasting packet 21
+20:34.945	ID:1	SinkC: Packet sent
+21:33.535	ID:1	SinkC: Broadcasting packet 22
+21:33.537	ID:1	SinkC: Packet sent
+21:33.539	ID:2	NodeC: received packet of length 2.
+21:33.541	ID:2	NodeC: Received the new packet 22.
+21:33.543	ID:2	NodeC: Forward delayed for 150 ms.
+21:33.691	ID:2	NodeC: Broadcasting packet 22
+21:33.699	ID:2	NodeC: Packet sent
+22:32.129	ID:1	SinkC: Broadcasting packet 23
+22:32.136	ID:1	SinkC: Packet sent
+23:30.723	ID:1	SinkC: Broadcasting packet 24
+23:30.725	ID:1	SinkC: Packet sent
+24:29.316	ID:1	SinkC: Broadcasting packet 25
+24:29.319	ID:1	SinkC: Packet sent
+25:27.911	ID:1	SinkC: Broadcasting packet 26
+25:27.912	ID:1	SinkC: Packet sent
+25:27.913	ID:2	NodeC: received packet of length 2.
+25:27.915	ID:2	NodeC: Received the new packet 26.
+25:27.917	ID:2	NodeC: Forward delayed for 71 ms.
+25:27.989	ID:2	NodeC: Broadcasting packet 26
+25:27.990	ID:2	NodeC: Packet sent
+26:26.504	ID:1	SinkC: Broadcasting packet 27
+26:26.508	ID:1	SinkC: Packet sent
+27:25.098	ID:1	SinkC: Broadcasting packet 28
+27:25.101	ID:1	SinkC: Packet sent
+27:25.103	ID:3	NodeC: received packet of length 2.
+27:25.103	ID:2	NodeC: received packet of length 2.
+27:25.105	ID:3	NodeC: Received the new packet 28.
+27:25.105	ID:2	NodeC: Received the new packet 28.
+27:25.106	ID:3	NodeC: Forward delayed for 588 ms.
+27:25.106	ID:2	NodeC: Forward delayed for 916 ms.
+27:25.683	ID:3	NodeC: Broadcasting packet 28
+27:25.687	ID:3	NodeC: Packet sent
+27:26.003	ID:2	NodeC: Broadcasting packet 28
+27:26.010	ID:2	NodeC: Packet sent
+28:23.691	ID:1	SinkC: Broadcasting packet 29
+28:23.696	ID:1	SinkC: Packet sent
+28:23.698	ID:4	NodeC: received packet of length 2.
+28:23.700	ID:4	NodeC: Received the new packet 29.
+28:23.701	ID:4	NodeC: Forward delayed for 756 ms.
+28:24.442	ID:4	NodeC: Broadcasting packet 29
+28:24.445	ID:4	NodeC: Packet sent
+29:22.285	ID:1	SinkC: Broadcasting packet 30
+29:22.295	ID:1	SinkC: Packet sent
+30:20.879	ID:1	SinkC: Broadcasting packet 31
+30:20.881	ID:1	SinkC: Packet sent
+31:19.473	ID:1	SinkC: Broadcasting packet 32
+31:19.481	ID:1	SinkC: Packet sent
+32:18.066	ID:1	SinkC: Broadcasting packet 33
+32:18.070	ID:1	SinkC: Packet sent
+32:18.071	ID:2	NodeC: received packet of length 2.
+32:18.071	ID:3	NodeC: received packet of length 2.
+32:18.073	ID:2	NodeC: Received the new packet 33.
+32:18.073	ID:3	NodeC: Received the new packet 33.
+32:18.075	ID:3	NodeC: Forward delayed for 833 ms.
+32:18.075	ID:2	NodeC: Forward delayed for 917 ms.
+32:18.891	ID:3	NodeC: Broadcasting packet 33
+32:18.896	ID:3	NodeC: Packet sent
+32:18.972	ID:2	NodeC: Broadcasting packet 33
+32:18.979	ID:2	NodeC: Packet sent
+33:16.661	ID:1	SinkC: Broadcasting packet 34
+33:16.662	ID:1	SinkC: Packet sent
+34:15.254	ID:1	SinkC: Broadcasting packet 35
+34:15.258	ID:1	SinkC: Packet sent
+34:15.260	ID:5	NodeC: received packet of length 2.
+34:15.261	ID:5	NodeC: Received the new packet 35.
+34:15.263	ID:5	NodeC: Forward delayed for 249 ms.
+34:15.508	ID:5	NodeC: Broadcasting packet 35
+34:15.512	ID:5	NodeC: Packet sent
+35:13.848	ID:1	SinkC: Broadcasting packet 36
+35:13.853	ID:1	SinkC: Packet sent
+35:13.855	ID:5	NodeC: received packet of length 2.
+35:13.856	ID:5	NodeC: Received the new packet 36.
+35:13.858	ID:5	NodeC: Forward delayed for 538 ms.
+35:14.385	ID:5	NodeC: Broadcasting packet 36
+35:14.392	ID:5	NodeC: Packet sent
+36:12.442	ID:1	SinkC: Broadcasting packet 37
+36:12.443	ID:1	SinkC: Packet sent
+37:11.035	ID:1	SinkC: Broadcasting packet 38
+37:11.044	ID:1	SinkC: Packet sent
+37:11.046	ID:3	NodeC: received packet of length 2.
+37:11.048	ID:3	NodeC: Received the new packet 38.
+37:11.049	ID:3	NodeC: Forward delayed for 562 ms.
+37:11.601	ID:3	NodeC: Broadcasting packet 38
+37:11.602	ID:3	NodeC: Packet sent
+38:09.629	ID:1	SinkC: Broadcasting packet 39
+38:09.633	ID:1	SinkC: Packet sent
+39:08.223	ID:1	SinkC: Broadcasting packet 40
+39:08.229	ID:1	SinkC: Packet sent
+40:06.816	ID:1	SinkC: Broadcasting packet 41
+40:06.825	ID:1	SinkC: Packet sent
+40:06.827	ID:4	NodeC: received packet of length 2.
+40:06.828	ID:4	NodeC: Received the new packet 41.
+40:06.830	ID:4	NodeC: Forward delayed for 45 ms.
+40:06.876	ID:4	NodeC: Broadcasting packet 41
+40:06.881	ID:4	NodeC: Packet sent
+41:05.410	ID:1	SinkC: Broadcasting packet 42
+41:05.419	ID:1	SinkC: Packet sent
+42:04.004	ID:1	SinkC: Broadcasting packet 43
+42:04.010	ID:1	SinkC: Packet sent
+43:02.598	ID:1	SinkC: Broadcasting packet 44
+43:02.600	ID:1	SinkC: Packet sent
+43:02.602	ID:5	NodeC: received packet of length 2.
+43:02.604	ID:5	NodeC: Received the new packet 44.
+43:02.605	ID:5	NodeC: Forward delayed for 339 ms.
+43:02.939	ID:5	NodeC: Broadcasting packet 44
+43:02.949	ID:5	NodeC: Packet sent
+44:01.191	ID:1	SinkC: Broadcasting packet 45
+44:01.200	ID:1	SinkC: Packet sent
+44:59.785	ID:1	SinkC: Broadcasting packet 46
+44:59.792	ID:1	SinkC: Packet sent
+45:58.379	ID:1	SinkC: Broadcasting packet 47
+45:58.388	ID:1	SinkC: Packet sent
+46:56.973	ID:1	SinkC: Broadcasting packet 48
+46:56.975	ID:1	SinkC: Packet sent
+46:56.977	ID:4	NodeC: received packet of length 2.
+46:56.977	ID:5	NodeC: received packet of length 2.
+46:56.979	ID:4	NodeC: Received the new packet 48.
+46:56.979	ID:5	NodeC: Received the new packet 48.
+46:56.980	ID:4	NodeC: Forward delayed for 854 ms.
+46:56.980	ID:5	NodeC: Forward delayed for 532 ms.
+46:57.502	ID:5	NodeC: Broadcasting packet 48
+46:57.508	ID:5	NodeC: Packet sent
+46:57.816	ID:4	NodeC: Broadcasting packet 48
+46:57.824	ID:4	NodeC: Packet sent
+47:55.566	ID:1	SinkC: Broadcasting packet 49
+47:55.574	ID:1	SinkC: Packet sent
+48:54.161	ID:1	SinkC: Broadcasting packet 50
+48:54.162	ID:1	SinkC: Packet sent
+49:52.754	ID:1	SinkC: Broadcasting packet 51
+49:52.758	ID:1	SinkC: Packet sent
+50:51.348	ID:1	SinkC: Broadcasting packet 52
+50:51.358	ID:1	SinkC: Packet sent
+51:49.942	ID:1	SinkC: Broadcasting packet 53
+51:49.943	ID:1	SinkC: Packet sent
+52:48.535	ID:1	SinkC: Broadcasting packet 54
+52:48.539	ID:1	SinkC: Packet sent
+53:47.129	ID:1	SinkC: Broadcasting packet 55
+53:47.139	ID:1	SinkC: Packet sent
+54:45.723	ID:1	SinkC: Broadcasting packet 56
+54:45.730	ID:1	SinkC: Packet sent
+55:44.316	ID:1	SinkC: Broadcasting packet 57
+55:44.320	ID:1	SinkC: Packet sent
+56:42.910	ID:1	SinkC: Broadcasting packet 58
+56:42.917	ID:1	SinkC: Packet sent
+57:41.504	ID:1	SinkC: Broadcasting packet 59
+57:41.507	ID:1	SinkC: Packet sent
+57:41.509	ID:3	NodeC: received packet of length 2.
+57:41.509	ID:4	NodeC: received packet of length 2.
+57:41.511	ID:3	NodeC: Received the new packet 59.
+57:41.511	ID:4	NodeC: Received the new packet 59.
+57:41.512	ID:3	NodeC: Forward delayed for 771 ms.
+57:41.512	ID:4	NodeC: Forward delayed for 279 ms.
+57:41.787	ID:4	NodeC: Broadcasting packet 59
+57:41.797	ID:4	NodeC: Packet sent
+57:42.268	ID:3	NodeC: Broadcasting packet 59
+57:42.269	ID:3	NodeC: Packet sent
+57:42.270	ID:9	NodeC: received packet of length 2.
+57:42.272	ID:9	NodeC: Received the new packet 59.
+57:42.274	ID:9	NodeC: Forward delayed for 236 ms.
+57:42.506	ID:9	NodeC: Broadcasting packet 59
+57:42.516	ID:9	NodeC: Packet sent
+58:40.098	ID:1	SinkC: Broadcasting packet 60
+58:40.102	ID:1	SinkC: Packet sent
+58:40.104	ID:2	NodeC: received packet of length 2.
+58:40.106	ID:2	NodeC: Received the new packet 60.
+58:40.107	ID:2	NodeC: Forward delayed for 510 ms.
+58:40.607	ID:2	NodeC: Broadcasting packet 60
+58:40.613	ID:2	NodeC: Packet sent
+58:40.614	ID:7	NodeC: received packet of length 2.
+58:40.616	ID:7	NodeC: Received the new packet 60.
+58:40.618	ID:7	NodeC: Forward delayed for 817 ms.
+58:41.418	ID:7	NodeC: Broadcasting packet 60
+58:41.428	ID:7	NodeC: Packet sent
+59:38.691	ID:1	SinkC: Broadcasting packet 61
+59:38.701	ID:1	SinkC: Packet sent
+59:38.703	ID:2	NodeC: received packet of length 2.
+59:38.705	ID:2	NodeC: Received the new packet 61.
+59:38.706	ID:2	NodeC: Forward delayed for 211 ms.
+59:38.915	ID:2	NodeC: Broadcasting packet 61
+59:38.925	ID:2	NodeC: Packet sent
+1:00:37.285	ID:1	SinkC: Broadcasting packet 62
+1:00:37.288	ID:1	SinkC: Packet sent
+1:01:35.879	ID:1	SinkC: Broadcasting packet 63
+1:01:35.881	ID:1	SinkC: Packet sent
+1:01:35.883	ID:5	NodeC: received packet of length 2.
+1:01:35.884	ID:5	NodeC: Received the new packet 63.
+1:01:35.886	ID:5	NodeC: Forward delayed for 941 ms.
+1:01:36.807	ID:5	NodeC: Broadcasting packet 63
+1:01:36.813	ID:5	NodeC: Packet sent
+1:02:34.473	ID:1	SinkC: Broadcasting packet 64
+1:02:34.475	ID:1	SinkC: Packet sent
+1:03:33.067	ID:1	SinkC: Broadcasting packet 65
+1:03:33.068	ID:1	SinkC: Packet sent
+1:03:33.070	ID:5	NodeC: received packet of length 2.
+1:03:33.070	ID:3	NodeC: received packet of length 2.
+1:03:33.071	ID:3	NodeC: Received the new packet 65.
+1:03:33.071	ID:5	NodeC: Received the new packet 65.
+1:03:33.073	ID:5	NodeC: Forward delayed for 130 ms.
+1:03:33.073	ID:3	NodeC: Forward delayed for 424 ms.
+1:03:33.202	ID:5	NodeC: Broadcasting packet 65
+1:03:33.211	ID:5	NodeC: Packet sent
+1:03:33.489	ID:3	NodeC: Broadcasting packet 65
+1:03:33.491	ID:3	NodeC: Packet sent
+1:04:31.660	ID:1	SinkC: Broadcasting packet 66
+1:04:31.662	ID:1	SinkC: Packet sent
+1:04:31.664	ID:5	NodeC: received packet of length 2.
+1:04:31.666	ID:5	NodeC: Received the new packet 66.
+1:04:31.667	ID:5	NodeC: Forward delayed for 983 ms.
+1:04:32.629	ID:5	NodeC: Broadcasting packet 66
+1:04:32.633	ID:5	NodeC: Packet sent
+1:05:30.254	ID:1	SinkC: Broadcasting packet 67
+1:05:30.262	ID:1	SinkC: Packet sent
+1:06:28.848	ID:1	SinkC: Broadcasting packet 68
+1:06:28.851	ID:1	SinkC: Packet sent
+1:07:27.441	ID:1	SinkC: Broadcasting packet 69
+1:07:27.445	ID:1	SinkC: Packet sent
+1:07:27.447	ID:2	NodeC: received packet of length 2.
+1:07:27.447	ID:3	NodeC: received packet of length 2.
+1:07:27.449	ID:2	NodeC: Received the new packet 69.
+1:07:27.449	ID:3	NodeC: Received the new packet 69.
+1:07:27.450	ID:3	NodeC: Forward delayed for 81 ms.
+1:07:27.450	ID:2	NodeC: Forward delayed for 552 ms.
+1:07:27.531	ID:3	NodeC: Broadcasting packet 69
+1:07:27.534	ID:3	NodeC: Packet sent
+1:07:27.991	ID:2	NodeC: Broadcasting packet 69
+1:07:28.001	ID:2	NodeC: Packet sent
+1:08:26.035	ID:1	SinkC: Broadcasting packet 70
+1:08:26.040	ID:1	SinkC: Packet sent
+1:09:24.629	ID:1	SinkC: Broadcasting packet 71
+1:09:24.638	ID:1	SinkC: Packet sent
+1:09:24.640	ID:3	NodeC: received packet of length 2.
+1:09:24.642	ID:3	NodeC: Received the new packet 71.
+1:09:24.644	ID:3	NodeC: Forward delayed for 990 ms.
+1:09:25.612	ID:3	NodeC: Broadcasting packet 71
+1:09:25.615	ID:3	NodeC: Packet sent
+1:10:23.223	ID:1	SinkC: Broadcasting packet 72
+1:10:23.229	ID:1	SinkC: Packet sent
+1:11:21.817	ID:1	SinkC: Broadcasting packet 73
+1:11:21.818	ID:1	SinkC: Packet sent
+1:11:21.820	ID:4	NodeC: received packet of length 2.
+1:11:21.820	ID:2	NodeC: received packet of length 2.
+1:11:21.821	ID:4	NodeC: Received the new packet 73.
+1:11:21.821	ID:2	NodeC: Received the new packet 73.
+1:11:21.823	ID:4	NodeC: Forward delayed for 856 ms.
+1:11:21.823	ID:2	NodeC: Forward delayed for 937 ms.
+1:11:22.661	ID:4	NodeC: Broadcasting packet 73
+1:11:22.664	ID:4	NodeC: Packet sent
+1:11:22.666	ID:11	NodeC: received packet of length 2.
+1:11:22.668	ID:11	NodeC: Received the new packet 73.
+1:11:22.670	ID:11	NodeC: Forward delayed for 325 ms.
+1:11:22.740	ID:2	NodeC: Broadcasting packet 73
+1:11:22.742	ID:2	NodeC: Packet sent
+1:11:22.744	ID:7	NodeC: received packet of length 2.
+1:11:22.746	ID:7	NodeC: Received the new packet 73.
+1:11:22.747	ID:7	NodeC: Forward delayed for 690 ms.
+1:11:22.989	ID:11	NodeC: Broadcasting packet 73
+1:11:22.992	ID:11	NodeC: Packet sent
+1:11:23.424	ID:7	NodeC: Broadcasting packet 73
+1:11:23.433	ID:7	NodeC: Packet sent
+1:12:20.410	ID:1	SinkC: Broadcasting packet 74
+1:12:20.418	ID:1	SinkC: Packet sent
+1:13:19.005	ID:1	SinkC: Broadcasting packet 75
+1:13:19.005	ID:1	SinkC: Packet sent
+1:14:17.598	ID:1	SinkC: Broadcasting packet 76
+1:14:17.606	ID:1	SinkC: Packet sent
+1:14:17.608	ID:3	NodeC: received packet of length 2.
+1:14:17.610	ID:3	NodeC: Received the new packet 76.
+1:14:17.612	ID:3	NodeC: Forward delayed for 847 ms.
+1:14:18.440	ID:3	NodeC: Broadcasting packet 76
+1:14:18.444	ID:3	NodeC: Packet sent
+1:14:18.446	ID:9	NodeC: received packet of length 2.
+1:14:18.448	ID:9	NodeC: Received the new packet 76.
+1:14:18.449	ID:9	NodeC: Forward delayed for 293 ms.
+1:14:18.738	ID:9	NodeC: Broadcasting packet 76
+1:14:18.743	ID:9	NodeC: Packet sent
+1:15:16.191	ID:1	SinkC: Broadcasting packet 77
+1:15:16.194	ID:1	SinkC: Packet sent
+1:15:16.196	ID:5	NodeC: received packet of length 2.
+1:15:16.197	ID:5	NodeC: Received the new packet 77.
+1:15:16.199	ID:5	NodeC: Forward delayed for 636 ms.
+1:15:16.823	ID:5	NodeC: Broadcasting packet 77
+1:15:16.832	ID:5	NodeC: Packet sent
+1:16:14.785	ID:1	SinkC: Broadcasting packet 78
+1:16:14.788	ID:1	SinkC: Packet sent
+1:17:13.379	ID:1	SinkC: Broadcasting packet 79
+1:17:13.385	ID:1	SinkC: Packet sent
+1:17:13.387	ID:5	NodeC: received packet of length 2.
+1:17:13.389	ID:5	NodeC: Received the new packet 79.
+1:17:13.390	ID:5	NodeC: Forward delayed for 485 ms.
+1:17:13.866	ID:5	NodeC: Broadcasting packet 79
+1:17:13.872	ID:5	NodeC: Packet sent
+1:18:11.973	ID:1	SinkC: Broadcasting packet 80
+1:18:11.978	ID:1	SinkC: Packet sent
+1:19:10.566	ID:1	SinkC: Broadcasting packet 81
+1:19:10.571	ID:1	SinkC: Packet sent
+1:20:09.160	ID:1	SinkC: Broadcasting packet 82
+1:20:09.169	ID:1	SinkC: Packet sent
+1:21:07.754	ID:1	SinkC: Broadcasting packet 83
+1:21:07.759	ID:1	SinkC: Packet sent
+1:22:06.348	ID:1	SinkC: Broadcasting packet 84
+1:22:06.351	ID:1	SinkC: Packet sent
+1:23:04.941	ID:1	SinkC: Broadcasting packet 85
+1:23:04.951	ID:1	SinkC: Packet sent
+1:23:04.952	ID:3	NodeC: received packet of length 2.
+1:23:04.954	ID:3	NodeC: Received the new packet 85.
+1:23:04.956	ID:3	NodeC: Forward delayed for 616 ms.
+1:23:05.560	ID:3	NodeC: Broadcasting packet 85
+1:23:05.563	ID:3	NodeC: Packet sent
+1:23:05.565	ID:9	NodeC: received packet of length 2.
+1:23:05.566	ID:9	NodeC: Received the new packet 85.
+1:23:05.568	ID:9	NodeC: Forward delayed for 974 ms.
+1:23:06.522	ID:9	NodeC: Broadcasting packet 85
+1:23:06.528	ID:9	NodeC: Packet sent
+1:24:03.535	ID:1	SinkC: Broadcasting packet 86
+1:24:03.537	ID:1	SinkC: Packet sent
+1:24:03.539	ID:2	NodeC: received packet of length 2.
+1:24:03.541	ID:2	NodeC: Received the new packet 86.
+1:24:03.542	ID:2	NodeC: Forward delayed for 582 ms.
+1:24:04.113	ID:2	NodeC: Broadcasting packet 86
+1:24:04.123	ID:2	NodeC: Packet sent
+1:25:02.129	ID:1	SinkC: Broadcasting packet 87
+1:25:02.133	ID:1	SinkC: Packet sent
+1:26:00.723	ID:1	SinkC: Broadcasting packet 88
+1:26:00.733	ID:1	SinkC: Packet sent
+1:26:59.316	ID:1	SinkC: Broadcasting packet 89
+1:26:59.324	ID:1	SinkC: Packet sent
+1:27:57.911	ID:1	SinkC: Broadcasting packet 90
+1:27:57.912	ID:1	SinkC: Packet sent
+1:28:56.504	ID:1	SinkC: Broadcasting packet 91
+1:28:56.509	ID:1	SinkC: Packet sent
+1:29:55.098	ID:1	SinkC: Broadcasting packet 92
+1:29:55.105	ID:1	SinkC: Packet sent
+1:30:53.691	ID:1	SinkC: Broadcasting packet 93
+1:30:53.698	ID:1	SinkC: Packet sent
+1:30:53.700	ID:4	NodeC: received packet of length 2.
+1:30:53.701	ID:4	NodeC: Received the new packet 93.
+1:30:53.703	ID:4	NodeC: Forward delayed for 277 ms.
+1:30:53.975	ID:4	NodeC: Broadcasting packet 93
+1:30:53.978	ID:4	NodeC: Packet sent
+1:31:52.285	ID:1	SinkC: Broadcasting packet 94
+1:31:52.290	ID:1	SinkC: Packet sent
+1:31:52.292	ID:3	NodeC: received packet of length 2.
+1:31:52.293	ID:3	NodeC: Received the new packet 94.
+1:31:52.295	ID:3	NodeC: Forward delayed for 949 ms.
+1:31:53.224	ID:3	NodeC: Broadcasting packet 94
+1:31:53.225	ID:3	NodeC: Packet sent
+1:32:50.879	ID:1	SinkC: Broadcasting packet 95
+1:32:50.884	ID:1	SinkC: Packet sent
+1:33:49.473	ID:1	SinkC: Broadcasting packet 96
+1:33:49.477	ID:1	SinkC: Packet sent
+1:34:48.066	ID:1	SinkC: Broadcasting packet 97
+1:34:48.072	ID:1	SinkC: Packet sent
+1:35:46.661	ID:1	SinkC: Broadcasting packet 98
+1:35:46.662	ID:1	SinkC: Packet sent
+1:35:46.663	ID:5	NodeC: received packet of length 2.
+1:35:46.664	ID:5	NodeC: Received the new packet 98.
+1:35:46.666	ID:5	NodeC: Forward delayed for 390 ms.
+1:35:47.049	ID:5	NodeC: Broadcasting packet 98
+1:35:47.059	ID:5	NodeC: Packet sent
+1:36:45.254	ID:1	SinkC: Broadcasting packet 99
+1:36:45.259	ID:1	SinkC: Packet sent
+1:37:43.848	ID:1	SinkC: Broadcasting packet 100
+1:37:43.856	ID:1	SinkC: Packet sent
+1:37:43.857	ID:4	NodeC: received packet of length 2.
+1:37:43.859	ID:4	NodeC: Received the new packet 100.
+1:37:43.861	ID:4	NodeC: Forward delayed for 282 ms.
+1:37:44.139	ID:4	NodeC: Broadcasting packet 100
+1:37:44.147	ID:4	NodeC: Packet sent
+1:38:42.441	ID:1	SinkC: Broadcasting packet 101
+1:38:42.445	ID:1	SinkC: Packet sent
+1:38:42.447	ID:5	NodeC: received packet of length 2.
+1:38:42.448	ID:5	NodeC: Received the new packet 101.
+1:38:42.450	ID:5	NodeC: Forward delayed for 207 ms.
+1:38:42.655	ID:5	NodeC: Broadcasting packet 101
+1:38:42.660	ID:5	NodeC: Packet sent
+1:39:41.035	ID:1	SinkC: Broadcasting packet 102
+1:39:41.040	ID:1	SinkC: Packet sent
+1:39:41.042	ID:2	NodeC: received packet of length 2.
+1:39:41.042	ID:4	NodeC: received packet of length 2.
+1:39:41.044	ID:4	NodeC: Received the new packet 102.
+1:39:41.044	ID:2	NodeC: Received the new packet 102.
+1:39:41.046	ID:4	NodeC: Forward delayed for 563 ms.
+1:39:41.046	ID:2	NodeC: Forward delayed for 951 ms.
+1:39:41.598	ID:4	NodeC: Broadcasting packet 102
+1:39:41.601	ID:4	NodeC: Packet sent
+1:39:41.977	ID:2	NodeC: Broadcasting packet 102
+1:39:41.981	ID:2	NodeC: Packet sent
+1:40:39.629	ID:1	SinkC: Broadcasting packet 103
+1:40:39.635	ID:1	SinkC: Packet sent
+1:40:39.637	ID:2	NodeC: received packet of length 2.
+1:40:39.638	ID:2	NodeC: Received the new packet 103.
+1:40:39.640	ID:2	NodeC: Forward delayed for 868 ms.
+1:40:40.490	ID:2	NodeC: Broadcasting packet 103
+1:40:40.493	ID:2	NodeC: Packet sent
+1:41:38.223	ID:1	SinkC: Broadcasting packet 104
+1:41:38.233	ID:1	SinkC: Packet sent
+1:41:38.234	ID:5	NodeC: received packet of length 2.
+1:41:38.236	ID:5	NodeC: Received the new packet 104.
+1:41:38.238	ID:5	NodeC: Forward delayed for 684 ms.
+1:41:38.909	ID:5	NodeC: Broadcasting packet 104
+1:41:38.912	ID:5	NodeC: Packet sent
+1:42:36.816	ID:1	SinkC: Broadcasting packet 105
+1:42:36.824	ID:1	SinkC: Packet sent
+1:43:35.410	ID:1	SinkC: Broadcasting packet 106
+1:43:35.420	ID:1	SinkC: Packet sent
+1:44:34.004	ID:1	SinkC: Broadcasting packet 107
+1:44:34.011	ID:1	SinkC: Packet sent
+1:44:34.012	ID:3	NodeC: received packet of length 2.
+1:44:34.012	ID:5	NodeC: received packet of length 2.
+1:44:34.014	ID:3	NodeC: Received the new packet 107.
+1:44:34.014	ID:5	NodeC: Received the new packet 107.
+1:44:34.016	ID:5	NodeC: Forward delayed for 45 ms.
+1:44:34.016	ID:3	NodeC: Forward delayed for 686 ms.
+1:44:34.062	ID:5	NodeC: Broadcasting packet 107
+1:44:34.067	ID:5	NodeC: Packet sent
+1:44:34.688	ID:3	NodeC: Broadcasting packet 107
+1:44:34.692	ID:3	NodeC: Packet sent
+1:45:32.598	ID:1	SinkC: Broadcasting packet 108
+1:45:32.604	ID:1	SinkC: Packet sent
+1:45:32.606	ID:5	NodeC: received packet of length 2.
+1:45:32.607	ID:5	NodeC: Received the new packet 108.
+1:45:32.609	ID:5	NodeC: Forward delayed for 390 ms.
+1:45:32.993	ID:5	NodeC: Broadcasting packet 108
+1:45:32.998	ID:5	NodeC: Packet sent
+1:46:31.191	ID:1	SinkC: Broadcasting packet 109
+1:46:31.202	ID:1	SinkC: Packet sent
+1:46:31.203	ID:2	NodeC: received packet of length 2.
+1:46:31.205	ID:2	NodeC: Received the new packet 109.
+1:46:31.207	ID:2	NodeC: Forward delayed for 845 ms.
+1:46:32.034	ID:2	NodeC: Broadcasting packet 109
+1:46:32.042	ID:2	NodeC: Packet sent
+1:47:29.786	ID:1	SinkC: Broadcasting packet 110
+1:47:29.787	ID:1	SinkC: Packet sent
+1:47:29.789	ID:2	NodeC: received packet of length 2.
+1:47:29.790	ID:2	NodeC: Received the new packet 110.
+1:47:29.792	ID:2	NodeC: Forward delayed for 286 ms.
+1:47:30.074	ID:2	NodeC: Broadcasting packet 110
+1:47:30.081	ID:2	NodeC: Packet sent
+1:48:28.379	ID:1	SinkC: Broadcasting packet 111
+1:48:28.385	ID:1	SinkC: Packet sent
+1:48:28.386	ID:3	NodeC: received packet of length 2.
+1:48:28.386	ID:4	NodeC: received packet of length 2.
+1:48:28.388	ID:3	NodeC: Received the new packet 111.
+1:48:28.388	ID:4	NodeC: Received the new packet 111.
+1:48:28.390	ID:3	NodeC: Forward delayed for 391 ms.
+1:48:28.390	ID:4	NodeC: Forward delayed for 148 ms.
+1:48:28.537	ID:4	NodeC: Broadcasting packet 111
+1:48:28.545	ID:4	NodeC: Packet sent
+1:48:28.774	ID:3	NodeC: Broadcasting packet 111
+1:48:28.780	ID:3	NodeC: Packet sent
+1:49:26.973	ID:1	SinkC: Broadcasting packet 112
+1:49:26.980	ID:1	SinkC: Packet sent
+1:49:26.982	ID:5	NodeC: received packet of length 2.
+1:49:26.983	ID:5	NodeC: Received the new packet 112.
+1:49:26.985	ID:5	NodeC: Forward delayed for 215 ms.
+1:49:27.197	ID:5	NodeC: Broadcasting packet 112
+1:49:27.207	ID:5	NodeC: Packet sent
+1:49:27.209	ID:13	NodeC: received packet of length 2.
+1:49:27.210	ID:13	NodeC: Received the new packet 112.
+1:49:27.212	ID:13	NodeC: Forward delayed for 702 ms.
+1:49:27.900	ID:13	NodeC: Broadcasting packet 112
+1:49:27.909	ID:13	NodeC: Packet sent
+1:50:25.566	ID:1	SinkC: Broadcasting packet 113
+1:50:25.575	ID:1	SinkC: Packet sent
+1:51:24.160	ID:1	SinkC: Broadcasting packet 114
+1:51:24.166	ID:1	SinkC: Packet sent
+1:52:22.755	ID:1	SinkC: Broadcasting packet 115
+1:52:22.755	ID:1	SinkC: Packet sent
+1:52:22.757	ID:2	NodeC: received packet of length 2.
+1:52:22.757	ID:5	NodeC: received packet of length 2.
+1:52:22.759	ID:2	NodeC: Received the new packet 115.
+1:52:22.759	ID:5	NodeC: Received the new packet 115.
+1:52:22.760	ID:5	NodeC: Forward delayed for 20 ms.
+1:52:22.760	ID:2	NodeC: Forward delayed for 271 ms.
+1:52:22.782	ID:5	NodeC: Broadcasting packet 115
+1:52:22.787	ID:5	NodeC: Packet sent
+1:52:23.027	ID:2	NodeC: Broadcasting packet 115
+1:52:23.032	ID:2	NodeC: Packet sent
+1:52:23.034	ID:7	NodeC: received packet of length 2.
+1:52:23.036	ID:7	NodeC: Received the new packet 115.
+1:52:23.037	ID:7	NodeC: Forward delayed for 271 ms.
+1:52:23.305	ID:7	NodeC: Broadcasting packet 115
+1:52:23.309	ID:7	NodeC: Packet sent
+1:52:23.311	ID:2	NodeC: received packet of length 2.
+1:52:23.312	ID:2	NodeC: Already received the packet 115
+1:53:21.348	ID:1	SinkC: Broadcasting packet 116
+1:53:21.358	ID:1	SinkC: Packet sent
+1:53:21.359	ID:2	NodeC: received packet of length 2.
+1:53:21.361	ID:2	NodeC: Received the new packet 116.
+1:53:21.363	ID:2	NodeC: Forward delayed for 628 ms.
+1:53:21.978	ID:2	NodeC: Broadcasting packet 116
+1:53:21.986	ID:2	NodeC: Packet sent
+1:54:19.941	ID:1	SinkC: Broadcasting packet 117
+1:54:19.950	ID:1	SinkC: Packet sent
+1:55:18.535	ID:1	SinkC: Broadcasting packet 118
+1:55:18.543	ID:1	SinkC: Packet sent
+1:55:18.545	ID:5	NodeC: received packet of length 2.
+1:55:18.546	ID:5	NodeC: Received the new packet 118.
+1:55:18.548	ID:5	NodeC: Forward delayed for 829 ms.
+1:55:19.360	ID:5	NodeC: Broadcasting packet 118
+1:55:19.369	ID:5	NodeC: Packet sent
+1:55:19.371	ID:13	NodeC: received packet of length 2.
+1:55:19.373	ID:13	NodeC: Received the new packet 118.
+1:55:19.375	ID:13	NodeC: Forward delayed for 347 ms.
+1:55:19.715	ID:13	NodeC: Broadcasting packet 118
+1:55:19.718	ID:13	NodeC: Packet sent
+1:55:19.720	ID:5	NodeC: received packet of length 2.
+1:55:19.722	ID:5	NodeC: Already received the packet 118
+1:56:17.129	ID:1	SinkC: Broadcasting packet 119
+1:56:17.131	ID:1	SinkC: Packet sent
+1:57:15.723	ID:1	SinkC: Broadcasting packet 120
+1:57:15.733	ID:1	SinkC: Packet sent
+1:58:14.316	ID:1	SinkC: Broadcasting packet 121
+1:58:14.319	ID:1	SinkC: Packet sent
+1:59:12.910	ID:1	SinkC: Broadcasting packet 122
+1:59:12.915	ID:1	SinkC: Packet sent
+2:00:11.505	ID:1	SinkC: Broadcasting packet 123
+2:00:11.505	ID:1	SinkC: Packet sent
+2:00:11.507	ID:4	NodeC: received packet of length 2.
+2:00:11.507	ID:2	NodeC: received packet of length 2.
+2:00:11.508	ID:2	NodeC: Received the new packet 123.
+2:00:11.508	ID:4	NodeC: Received the new packet 123.
+2:00:11.510	ID:4	NodeC: Forward delayed for 521 ms.
+2:00:11.510	ID:2	NodeC: Forward delayed for 733 ms.
+2:00:12.021	ID:4	NodeC: Broadcasting packet 123
+2:00:12.028	ID:4	NodeC: Packet sent
+2:00:12.228	ID:2	NodeC: Broadcasting packet 123
+2:00:12.235	ID:2	NodeC: Packet sent
+2:01:10.098	ID:1	SinkC: Broadcasting packet 124
+2:01:10.099	ID:1	SinkC: Packet sent
+2:01:10.101	ID:3	NodeC: received packet of length 2.
+2:01:10.103	ID:3	NodeC: Received the new packet 124.
+2:01:10.104	ID:3	NodeC: Forward delayed for 776 ms.
+2:01:10.864	ID:3	NodeC: Broadcasting packet 124
+2:01:10.871	ID:3	NodeC: Packet sent
+2:02:08.692	ID:1	SinkC: Broadcasting packet 125
+2:02:08.693	ID:1	SinkC: Packet sent
+2:03:07.285	ID:1	SinkC: Broadcasting packet 126
+2:03:07.293	ID:1	SinkC: Packet sent
+2:04:05.879	ID:1	SinkC: Broadcasting packet 127
+2:04:05.888	ID:1	SinkC: Packet sent
+2:05:04.473	ID:1	SinkC: Broadcasting packet 128
+2:05:04.483	ID:1	SinkC: Packet sent
+2:05:04.484	ID:2	NodeC: received packet of length 2.
+2:05:04.486	ID:2	NodeC: Received the new packet 128.
+2:05:04.488	ID:2	NodeC: Forward delayed for 766 ms.
+2:05:05.239	ID:2	NodeC: Broadcasting packet 128
+2:05:05.240	ID:2	NodeC: Packet sent
+2:06:03.067	ID:1	SinkC: Broadcasting packet 129
+2:06:03.068	ID:1	SinkC: Packet sent
+2:07:01.660	ID:1	SinkC: Broadcasting packet 130
+2:07:01.664	ID:1	SinkC: Packet sent
+2:08:00.254	ID:1	SinkC: Broadcasting packet 131
+2:08:00.258	ID:1	SinkC: Packet sent
+2:08:58.848	ID:1	SinkC: Broadcasting packet 132
+2:08:58.851	ID:1	SinkC: Packet sent
+2:08:58.853	ID:2	NodeC: received packet of length 2.
+2:08:58.854	ID:2	NodeC: Received the new packet 132.
+2:08:58.856	ID:2	NodeC: Forward delayed for 375 ms.
+2:08:59.225	ID:2	NodeC: Broadcasting packet 132
+2:08:59.232	ID:2	NodeC: Packet sent
+2:08:59.234	ID:7	NodeC: received packet of length 2.
+2:08:59.236	ID:7	NodeC: Received the new packet 132.
+2:08:59.238	ID:7	NodeC: Forward delayed for 488 ms.
+2:08:59.717	ID:7	NodeC: Broadcasting packet 132
+2:08:59.720	ID:7	NodeC: Packet sent
+2:09:57.441	ID:1	SinkC: Broadcasting packet 133
+2:09:57.450	ID:1	SinkC: Packet sent
+2:09:57.451	ID:2	NodeC: received packet of length 2.
+2:09:57.453	ID:2	NodeC: Received the new packet 133.
+2:09:57.455	ID:2	NodeC: Forward delayed for 176 ms.
+2:09:57.629	ID:2	NodeC: Broadcasting packet 133
+2:09:57.636	ID:2	NodeC: Packet sent
+2:10:56.035	ID:1	SinkC: Broadcasting packet 134
+2:10:56.037	ID:1	SinkC: Packet sent
+2:10:56.039	ID:2	NodeC: received packet of length 2.
+2:10:56.041	ID:2	NodeC: Received the new packet 134.
+2:10:56.043	ID:2	NodeC: Forward delayed for 845 ms.
+2:10:56.870	ID:2	NodeC: Broadcasting packet 134
+2:10:56.873	ID:2	NodeC: Packet sent
+2:10:56.875	ID:7	NodeC: received packet of length 2.
+2:10:56.876	ID:7	NodeC: Received the new packet 134.
+2:10:56.878	ID:7	NodeC: Forward delayed for 345 ms.
+2:10:57.218	ID:7	NodeC: Broadcasting packet 134
+2:10:57.227	ID:7	NodeC: Packet sent
+2:11:54.630	ID:1	SinkC: Broadcasting packet 135
+2:11:54.630	ID:1	SinkC: Packet sent
+2:11:54.632	ID:2	NodeC: received packet of length 2.
+2:11:54.632	ID:4	NodeC: received packet of length 2.
+2:11:54.634	ID:2	NodeC: Received the new packet 135.
+2:11:54.634	ID:4	NodeC: Received the new packet 135.
+2:11:54.636	ID:2	NodeC: Forward delayed for 674 ms.
+2:11:54.636	ID:4	NodeC: Forward delayed for 310 ms.
+2:11:54.940	ID:4	NodeC: Broadcasting packet 135
+2:11:54.944	ID:4	NodeC: Packet sent
+2:11:55.296	ID:2	NodeC: Broadcasting packet 135
+2:11:55.303	ID:2	NodeC: Packet sent
+2:11:55.304	ID:7	NodeC: received packet of length 2.
+2:11:55.306	ID:7	NodeC: Received the new packet 135.
+2:11:55.308	ID:7	NodeC: Forward delayed for 2 ms.
+2:11:55.312	ID:7	NodeC: Broadcasting packet 135
+2:11:55.313	ID:7	NodeC: Packet sent
+2:12:53.223	ID:1	SinkC: Broadcasting packet 136
+2:12:53.229	ID:1	SinkC: Packet sent
+2:12:53.231	ID:4	NodeC: received packet of length 2.
+2:12:53.231	ID:5	NodeC: received packet of length 2.
+2:12:53.232	ID:4	NodeC: Received the new packet 136.
+2:12:53.232	ID:5	NodeC: Received the new packet 136.
+2:12:53.234	ID:4	NodeC: Forward delayed for 935 ms.
+2:12:53.234	ID:5	NodeC: Forward delayed for 318 ms.
+2:12:53.547	ID:5	NodeC: Broadcasting packet 136
+2:12:53.552	ID:5	NodeC: Packet sent
+2:12:54.149	ID:4	NodeC: Broadcasting packet 136
+2:12:54.156	ID:4	NodeC: Packet sent
+2:13:51.816	ID:1	SinkC: Broadcasting packet 137
+2:13:51.827	ID:1	SinkC: Packet sent
+2:14:50.410	ID:1	SinkC: Broadcasting packet 138
+2:14:50.419	ID:1	SinkC: Packet sent
+2:15:49.004	ID:1	SinkC: Broadcasting packet 139
+2:15:49.008	ID:1	SinkC: Packet sent
+2:15:49.010	ID:5	NodeC: received packet of length 2.
+2:15:49.012	ID:5	NodeC: Received the new packet 139.
+2:15:49.013	ID:5	NodeC: Forward delayed for 291 ms.
+2:15:49.299	ID:5	NodeC: Broadcasting packet 139
+2:15:49.309	ID:5	NodeC: Packet sent
+2:16:47.598	ID:1	SinkC: Broadcasting packet 140
+2:16:47.605	ID:1	SinkC: Packet sent
+2:17:46.191	ID:1	SinkC: Broadcasting packet 141
+2:17:46.198	ID:1	SinkC: Packet sent
+2:17:46.200	ID:5	NodeC: received packet of length 2.
+2:17:46.202	ID:5	NodeC: Received the new packet 141.
+2:17:46.204	ID:5	NodeC: Forward delayed for 712 ms.
+2:17:46.901	ID:5	NodeC: Broadcasting packet 141
+2:17:46.910	ID:5	NodeC: Packet sent
+2:17:46.912	ID:13	NodeC: received packet of length 2.
+2:17:46.913	ID:13	NodeC: Received the new packet 141.
+2:17:46.915	ID:13	NodeC: Forward delayed for 364 ms.
+2:17:47.273	ID:13	NodeC: Broadcasting packet 141
+2:17:47.281	ID:13	NodeC: Packet sent
+2:18:44.785	ID:1	SinkC: Broadcasting packet 142
+2:18:44.788	ID:1	SinkC: Packet sent
+2:19:43.379	ID:1	SinkC: Broadcasting packet 143
+2:19:43.384	ID:1	SinkC: Packet sent
+2:19:43.386	ID:5	NodeC: received packet of length 2.
+2:19:43.387	ID:5	NodeC: Received the new packet 143.
+2:19:43.389	ID:5	NodeC: Forward delayed for 661 ms.
+2:19:44.037	ID:5	NodeC: Broadcasting packet 143
+2:19:44.043	ID:5	NodeC: Packet sent
