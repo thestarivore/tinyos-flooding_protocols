@@ -1,0 +1,1224 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Result Graphs}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{comparing-flooding-protocols-in-a-wsn}{%
+\subsection{Comparing Flooding protocols in a
+WSN}\label{comparing-flooding-protocols-in-a-wsn}}
+
+The sink of a WSN have to periodically (every 60s) distribute some data
+to all the other nodes. Implement a flooding protocol to distribute such
+data. Implement two version of the flooding protocol. A trivial version
+in which each node simply reforward (in broadcast) the packet it
+receives, and a more efficient version (similar to the CCBR protocol we
+studied) in which each node waits for a random delay before reforwarding
+and only reforwards (in broadcast) if during that delay no other node
+reforwarded the same packet (opportunistic flooding).
+
+Compare the two protocols in terms of:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The percentage of nodes that actually receive the flooded data
+\item
+  The number of packets used to flood the network
+\end{enumerate}
+
+Perform the comparison under different conditions in terms of: total
+number of nodes, distance among nodes, size of the data to distributed
+(from 2 bytes up to 20 bytes).
+
+    \hypertarget{simulation-setup}{%
+\subsection{Simulation Setup}\label{simulation-setup}}
+
+We've divided the simulation into three categories by varying only one
+of the three conditions stated above at a time while fixing the other
+two. That way we have the following configurations: 1. \textbf{Variable
+Packet Sizes} (fixed number of nodes and distance among nodes); 2.
+\textbf{Variable Number of Nodes} (fixed packet sizes and distance among
+nodes); 3. \textbf{Variable Distance} (fixed number of nodes and packet
+sizes);
+
+For each of these three configurations we compare the two protocols in
+terms of \textbf{the percentage of nodes that actually received the
+flooded data} and \textbf{the number of packet used to flood the
+network}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{n}{fig\PYZus{}width} \PY{o}{=} \PY{l+m+mi}{12}
+        \PY{n}{fig\PYZus{}height} \PY{o}{=} \PY{l+m+mi}{10}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn\PYZhy{}whitegrid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{k}{class} \PY{n+nc}{bcolors}\PY{p}{:}
+            \PY{n}{HEADER} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[95m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{OKBLUE} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[94m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{OKGREEN} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[92m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{WARNING} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[93m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{FAIL} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[91m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{ENDC} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[0m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{BOLD} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[1m}\PY{l+s+s1}{\PYZsq{}}
+            \PY{n}{UNDERLINE} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}033}\PY{l+s+s1}{[4m}\PY{l+s+s1}{\PYZsq{}}
+\end{Verbatim}
+
+
+    \hypertarget{variable-packet-sizes}{%
+\section{1. Variable Packet Sizes}\label{variable-packet-sizes}}
+
+\begin{itemize}
+\tightlist
+\item
+  packet sizes = {[}2, \ldots{}, 20{]}
+\item
+  number of nodes = 20
+\item
+  distance = 25
+\item
+  TX ratio = 80\%, RX ratio = 0\%
+\item
+  topology: 
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{algorithms} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         \PY{n}{packet\PYZus{}sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{18}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{]}
+         \PY{n}{packets} \PY{o}{=} \PY{l+m+mi}{100}
+         \PY{n}{nodes} \PY{o}{=} \PY{l+m+mi}{20}
+         \PY{n}{distance} \PY{o}{=} \PY{l+m+mi}{25}
+         
+         \PY{n}{sent} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+         \PY{n}{received} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+         
+         \PY{k}{for} \PY{n}{algorithm} \PY{o+ow}{in} \PY{n}{algorithms}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bcolors}\PY{o}{.}\PY{n}{BOLD} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{n}{bcolors}\PY{o}{.}\PY{n}{ENDC}\PY{p}{)}
+             \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+             \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{packet\PYZus{}size} \PY{o+ow}{in} \PY{n}{packet\PYZus{}sizes}\PY{p}{:}
+                 \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{results/packet\PYZus{}size/}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{packet\PYZus{}size}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{distance}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}}  \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{nodes}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.txt}\PY{l+s+s2}{\PYZdq{}}
+                 \PY{n}{file} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                 
+                 \PY{n}{received\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{sent\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{sent\PYZus{}by\PYZus{}sink} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{received\PYZus{}by} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         
+                 \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{nodes}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+                     \PY{n}{received\PYZus{}by}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                 \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{file}\PY{p}{:}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Broadcasting packet 101}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{k}{break}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Received the new packet}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+         
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Packet size: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{packet\PYZus{}size}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent by sink: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent:received by nodes: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{:}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Received packets total: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{/}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{, }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{)}
+                 
+                 \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)} \PY{o}{+} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}
+         
+                 
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}    
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{d\PYZus{}sent} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{d\PYZus{}sent}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ sent }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{d\PYZus{}sent}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ sent AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{x1} \PY{o}{=} \PY{n}{packet\PYZus{}sizes}
+         \PY{n}{y1} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+         
+         \PY{n}{x2} \PY{o}{=} \PY{n}{packet\PYZus{}sizes}
+         \PY{n}{y2} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Sent Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Packet size [bytes]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+         \PY{n}{d\PYZus{}received} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{d\PYZus{}received}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ received }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ received AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{p}{)}\PY{p}{)}    
+         
+         \PY{n}{x1} \PY{o}{=} \PY{n}{packet\PYZus{}sizes}
+         \PY{n}{y1} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+         
+         \PY{n}{x2} \PY{o}{=} \PY{n}{packet\PYZus{}sizes}
+         \PY{n}{y2} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{packet\PYZus{}sizes}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Received}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Received Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Packet size [bytes]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+	 \textbf{broadcast}
+Packet size: 2
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1621:1621
+	Received packets total: 1621/2000, 81.05\%
+
+Packet size: 4
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1662:1662
+	Received packets total: 1662/2000, 83.10\%
+
+Packet size: 6
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1674:1674
+	Received packets total: 1674/2000, 83.70\%
+
+Packet size: 8
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1616:1616
+	Received packets total: 1616/2000, 80.80\%
+
+Packet size: 10
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1650:1650
+	Received packets total: 1650/2000, 82.50\%
+
+Packet size: 12
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1652:1652
+	Received packets total: 1652/2000, 82.60\%
+
+Packet size: 14
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1647:1647
+	Received packets total: 1647/2000, 82.35\%
+
+Packet size: 16
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1635:1635
+	Received packets total: 1635/2000, 81.75\%
+
+Packet size: 18
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1615:1615
+	Received packets total: 1615/2000, 80.75\%
+
+Packet size: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1663:1663
+	Received packets total: 1663/2000, 83.15\%
+
+
+	 \textbf{ccbr}
+Packet size: 2
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1022:1022
+	Received packets total: 1022/2000, 51.10\%
+
+Packet size: 4
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 950:950
+	Received packets total: 950/2000, 47.50\%
+
+Packet size: 6
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 856:856
+	Received packets total: 856/2000, 42.80\%
+
+Packet size: 8
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 856:856
+	Received packets total: 856/2000, 42.80\%
+
+Packet size: 10
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1040:1040
+	Received packets total: 1040/2000, 52.00\%
+
+Packet size: 12
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1007:1007
+	Received packets total: 1007/2000, 50.35\%
+
+Packet size: 14
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 888:888
+	Received packets total: 888/2000, 44.40\%
+
+Packet size: 16
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1005:1005
+	Received packets total: 1005/2000, 50.25\%
+
+Packet size: 18
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 982:982
+	Received packets total: 982/2000, 49.10\%
+
+Packet size: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 966:966
+	Received packets total: 966/2000, 48.30\%
+
+------------ AVG sent Broadcast VS CCBR ------------
+Sent AVG broadcast: 1743.50
+Sent AVG ccbr: 1057.20
+
+------------ Δ sent Broadcast VS CCBR ------------
+Δ sent 2: 599
+Δ sent 4: 712
+Δ sent 6: 818
+Δ sent 8: 760
+Δ sent 10: 610
+Δ sent 12: 645
+Δ sent 14: 759
+Δ sent 16: 630
+Δ sent 18: 633
+Δ sent 20: 697
+
+Δ sent AVG: 686.30
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_4_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+------------ AVG received Broadcast VS CCBR ------------
+Received AVG broadcast: 82.17\%
+Received AVG ccbr: 47.86\%
+
+------------ Δ received Broadcast VS CCBR ------------
+Δ received 2: 29.95\%
+Δ received 4: 35.60\%
+Δ received 6: 40.90\%
+Δ received 8: 38.00\%
+Δ received 10: 30.50\%
+Δ received 12: 32.25\%
+Δ received 14: 37.95\%
+Δ received 16: 31.50\%
+Δ received 18: 31.65\%
+Δ received 20: 34.85\%
+
+Δ received AVG: 34.31\%
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_4_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{resulting-plots-analysis}{%
+\subsubsection{Resulting plots
+analysis}\label{resulting-plots-analysis}}
+
+Given the plot above we can observe that \textbf{packet size does not
+influence the percentage of nodes that actually received the flooded
+data and/or the number of packet used to flood the network}, or at least
+this does not happen in the interval specified {[}2-20{]}.
+
+We can also notice that CCBR on average uses \textbf{39\%} less packets
+to flood the network that the Broadcast version, while the percentage of
+nodes that actually receive the flooded data is \textbf{34\%} less that
+the Broadcast version.
+
+So while CCBR has a lower rate for received packets it uses a less
+packets to flood the network.
+
+    \hypertarget{variable-number-of-nodes}{%
+\section{2. Variable Number of Nodes}\label{variable-number-of-nodes}}
+
+\begin{itemize}
+\tightlist
+\item
+  number of nodes = {[}8, \ldots{}, 28{]}
+\item
+  packet size = 2 bytes
+\item
+  distance = 30
+\item
+  TX ratio = 80\%, RX ratio = 80\%
+\item
+  topologies:
+\end{itemize}
+
+1
+
+8 nodes + 1 sink
+
+2
+
+12 nodes + 1 sink
+
+3
+
+16 nodes + 1 sink
+
+4
+
+20 nodes + 1 sink
+
+5
+
+24 nodes + 1 sink
+
+6
+
+28 nodes + 1 sink
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{algorithms} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         \PY{n}{packet\PYZus{}size} \PY{o}{=} \PY{l+m+mi}{2}
+         \PY{n}{packets} \PY{o}{=} \PY{l+m+mi}{100}
+         \PY{n}{nodes\PYZus{}number} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{16}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{24}\PY{p}{,}\PY{l+m+mi}{28}\PY{p}{]}
+         \PY{n}{distance} \PY{o}{=} \PY{l+m+mi}{30}
+         
+         \PY{n}{sent} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+         \PY{n}{received} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+         
+         \PY{k}{for} \PY{n}{algorithm} \PY{o+ow}{in} \PY{n}{algorithms}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bcolors}\PY{o}{.}\PY{n}{BOLD} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{n}{bcolors}\PY{o}{.}\PY{n}{ENDC}\PY{p}{)}
+             \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+             \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+             
+             \PY{k}{for} \PY{n}{nodes} \PY{o+ow}{in} \PY{n}{nodes\PYZus{}number}\PY{p}{:}
+                 \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{results/nodes/}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{packet\PYZus{}size}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{distance}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}}  \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{nodes}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.txt}\PY{l+s+s2}{\PYZdq{}}
+                 \PY{n}{file} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                 
+                 \PY{n}{received\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{sent\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{sent\PYZus{}by\PYZus{}sink} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                 \PY{n}{received\PYZus{}by} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         
+                 \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{nodes}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+                     \PY{n}{received\PYZus{}by}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                 \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{file}\PY{p}{:}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Broadcasting packet 101}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{k}{break}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                     \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Received the new packet}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                         \PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+         
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Number of nodes: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{nodes}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent by sink: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent:received by nodes: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{:}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Received packets total: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{/}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{, }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{)}
+                 
+                 \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)} \PY{o}{+} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}
+                 \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}    
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{d\PYZus{}sent} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{d\PYZus{}sent}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ sent }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{d\PYZus{}sent}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ sent AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{x1} \PY{o}{=} \PY{n}{nodes\PYZus{}number}
+         \PY{n}{y1} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+         
+         \PY{n}{x2} \PY{o}{=} \PY{n}{nodes\PYZus{}number}
+         \PY{n}{y2} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Sent Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Nodes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+         
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+         \PY{n}{d\PYZus{}received} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{d\PYZus{}received}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ received }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ received AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{x1} \PY{o}{=} \PY{n}{nodes\PYZus{}number}
+         \PY{n}{y1} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+         
+         \PY{n}{x2} \PY{o}{=} \PY{n}{nodes\PYZus{}number}
+         \PY{n}{y2} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{nodes\PYZus{}number}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Received}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Received Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Nodes}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+	 \textbf{broadcast}
+Number of nodes: 8
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 701:701
+	Received packets total: 701/800, 87.62\%
+
+Number of nodes: 12
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1163:1163
+	Received packets total: 1163/1200, 96.92\%
+
+Number of nodes: 16
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1446:1446
+	Received packets total: 1446/1600, 90.38\%
+
+Number of nodes: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1740:1740
+	Received packets total: 1740/2000, 87.00\%
+
+Number of nodes: 24
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 2221:2221
+	Received packets total: 2221/2400, 92.54\%
+
+Number of nodes: 28
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 2794:2794
+	Received packets total: 2794/2800, 99.79\%
+
+
+	 \textbf{ccbr}
+Number of nodes: 8
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 578:578
+	Received packets total: 578/800, 72.25\%
+
+Number of nodes: 12
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 960:960
+	Received packets total: 960/1200, 80.00\%
+
+Number of nodes: 16
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1060:1060
+	Received packets total: 1060/1600, 66.25\%
+
+Number of nodes: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1330:1330
+	Received packets total: 1330/2000, 66.50\%
+
+Number of nodes: 24
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 1807:1807
+	Received packets total: 1807/2400, 75.29\%
+
+Number of nodes: 28
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 2218:2218
+	Received packets total: 2218/2800, 79.21\%
+
+------------ AVG sent Broadcast VS CCBR ------------
+Sent AVG broadcast: 1777.50
+Sent AVG ccbr: 1425.50
+
+------------ Δ sent Broadcast VS CCBR ------------
+Δ sent 8: 123
+Δ sent 12: 203
+Δ sent 16: 386
+Δ sent 20: 410
+Δ sent 24: 414
+Δ sent 28: 576
+
+Δ sent AVG: 352.00
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+------------ AVG received Broadcast VS CCBR ------------
+Received AVG broadcast: 92.37\%
+Received AVG ccbr: 73.25\%
+
+------------ Δ received Broadcast VS CCBR ------------
+Δ received 8: 15.38\%
+Δ received 12: 16.92\%
+Δ received 16: 24.12\%
+Δ received 20: 20.50\%
+Δ received 24: 17.25\%
+Δ received 28: 20.57\%
+
+Δ received AVG: 19.12\%
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{resulting-plots-analysis}{%
+\subsubsection{Resulting plots
+analysis}\label{resulting-plots-analysis}}
+
+Given the Plot above we can observe that \textbf{the number of packet
+used to flood the network increases linearly with the number of nodes
+present on the network}, while \textbf{the percentage of nodes that
+actually received the flooded data does not change with the number of
+nodes}.
+
+We can also notice that CCBR on avarage uses \textbf{20\%} less packets
+to flood the network that the Broadcast version, while the percentage of
+nodes that actually receive the flooded data is \textbf{19\%} less that
+the Broadcast version.
+
+    \hypertarget{variable-distance}{%
+\section{3. Variable Distance}\label{variable-distance}}
+
+\begin{itemize}
+\tightlist
+\item
+  distance = {[}10, \ldots{}, 40{]}
+\item
+  packet size = 2 bytes
+\item
+  number of nodes: 8 nodes + 1 sink
+\item
+  TX ratio = 80\%, RX ratio = 0\%
+\item
+  topologies:
+\end{itemize}
+
+1
+
+distance = 10
+
+2
+
+distance = 15
+
+3
+
+distance = 20
+
+4
+
+distance = 25
+
+5
+
+distance = 30
+
+6
+
+distance = 35
+
+7
+
+distance = 40
+
+8
+
+distance = 45
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{algorithms} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        \PY{n}{packet\PYZus{}size} \PY{o}{=} \PY{l+m+mi}{2}
+        \PY{n}{packets} \PY{o}{=} \PY{l+m+mi}{100}
+        \PY{n}{nodes} \PY{o}{=} \PY{l+m+mi}{8}
+        \PY{n}{distances} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{25}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{l+m+mi}{35}\PY{p}{,}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+m+mi}{45}\PY{p}{]}
+        
+        \PY{n}{sent} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+        \PY{n}{received} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+        
+        \PY{k}{for} \PY{n}{algorithm} \PY{o+ow}{in} \PY{n}{algorithms}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{bcolors}\PY{o}{.}\PY{n}{BOLD} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{n}{bcolors}\PY{o}{.}\PY{n}{ENDC}\PY{p}{)}
+            \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+            \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+            
+            \PY{k}{for} \PY{n}{distance} \PY{o+ow}{in} \PY{n}{distances}\PY{p}{:}
+                \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{results/distances/}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{algorithm} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{packet\PYZus{}size}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{distance}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}}  \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{nodes}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.txt}\PY{l+s+s2}{\PYZdq{}}
+                \PY{n}{file} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                
+                \PY{n}{received\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                \PY{n}{sent\PYZus{}by\PYZus{}nodes} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                \PY{n}{sent\PYZus{}by\PYZus{}sink} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{p}{)}
+                \PY{n}{received\PYZus{}by} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        
+                \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{nodes}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+                    \PY{n}{received\PYZus{}by}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{file}\PY{p}{:}
+                    \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Broadcasting packet 101}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                        \PY{k}{break}
+                    \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SinkC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                        \PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                    \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Packet sent}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                        \PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+                    \PY{k}{if} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NodeC: Received the new packet}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{line}\PY{p}{)}\PY{p}{:}
+                        \PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{line}\PY{p}{)}
+        
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Distance: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{distance}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent by sink: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Packets sent:received by nodes: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{:}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{Received packets total: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{/}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{, }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{)}
+                
+                \PY{n}{sent}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}sink}\PY{p}{)} \PY{o}{+} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{p}{)}
+                \PY{n}{received}\PY{p}{[}\PY{n}{algorithm}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received\PYZus{}by\PYZus{}nodes}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{packets}\PY{o}{*}\PY{n}{nodes}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{)}
+        
+                
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sent AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ sent Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{d\PYZus{}sent} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+            \PY{n}{d\PYZus{}sent}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ sent }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{distances}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{d\PYZus{}sent}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ sent AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}sent}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+                
+        \PY{n}{x1} \PY{o}{=} \PY{n}{distances}
+        \PY{n}{y1} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+        
+        \PY{n}{x2} \PY{o}{=} \PY{n}{distances}
+        \PY{n}{y2} \PY{o}{=} \PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distances}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{sent}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distances}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Sent Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+        
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} AVG received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG broadcast: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Received AVG ccbr: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Δ received Broadcast VS CCBR \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+        \PY{n}{d\PYZus{}received} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+            \PY{n}{d\PYZus{}received}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Δ received }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{distances}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Δ received AVG: }\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{d\PYZus{}received}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{x1} \PY{o}{=} \PY{n}{distances}
+        \PY{n}{y1} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  
+        
+        \PY{n}{x2} \PY{o}{=} \PY{n}{distances}
+        \PY{n}{y2} \PY{o}{=} \PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{n}{fig\PYZus{}width}\PY{p}{,} \PY{n}{fig\PYZus{}height}\PY{p}{)}\PY{p}{,} \PY{n}{dpi}\PY{o}{=} \PY{l+m+mi}{80}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x2}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{align} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{CCBR}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{broadcast}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distances}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG broadcast}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,} \PY{p}{[}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{received}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ccbr}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{o}{*}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distances}\PY{p}{)}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{AVG CCBR}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Received}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsh{} Received Packets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Distance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+	 \textbf{broadcast}
+Distance: 10
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 795:795
+	Received packets total: 795/800, 99.38\%
+
+Distance: 15
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 794:794
+	Received packets total: 794/800, 99.25\%
+
+Distance: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 755:755
+	Received packets total: 755/800, 94.38\%
+
+Distance: 25
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 627:627
+	Received packets total: 627/800, 78.38\%
+
+Distance: 30
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 546:546
+	Received packets total: 546/800, 68.25\%
+
+Distance: 35
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 292:292
+	Received packets total: 292/800, 36.50\%
+
+Distance: 40
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 177:177
+	Received packets total: 177/800, 22.12\%
+
+Distance: 45
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 67:67
+	Received packets total: 67/800, 8.38\%
+
+
+	 \textbf{ccbr}
+Distance: 10
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 608:608
+	Received packets total: 608/800, 76.00\%
+
+Distance: 15
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 617:617
+	Received packets total: 617/800, 77.12\%
+
+Distance: 20
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 568:568
+	Received packets total: 568/800, 71.00\%
+
+Distance: 25
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 427:427
+	Received packets total: 427/800, 53.37\%
+
+Distance: 30
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 327:327
+	Received packets total: 327/800, 40.88\%
+
+Distance: 35
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 232:232
+	Received packets total: 232/800, 29.00\%
+
+Distance: 40
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 153:153
+	Received packets total: 153/800, 19.12\%
+
+Distance: 45
+	Packets sent by sink: 100
+	Packets sent:received by nodes: 63:63
+	Received packets total: 63/800, 7.88\%
+
+------------ AVG sent Broadcast VS CCBR ------------
+Sent AVG broadcast: 606.62
+Sent AVG ccbr: 474.38
+
+------------ Δ sent Broadcast VS CCBR ------------
+Δ sent 10: 187
+Δ sent 15: 177
+Δ sent 20: 187
+Δ sent 25: 200
+Δ sent 30: 219
+Δ sent 35: 60
+Δ sent 40: 24
+Δ sent 45: 4
+
+Δ sent AVG: 132.25
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_10_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+------------ AVG received Broadcast VS CCBR ------------
+Received AVG broadcast: 63.33\%
+Received AVG ccbr: 46.80\%
+
+------------ Δ received Broadcast VS CCBR ------------
+Δ received 10: 23.38\%
+Δ received 15: 22.12\%
+Δ received 20: 23.38\%
+Δ received 25: 25.00\%
+Δ received 30: 27.38\%
+Δ received 35: 7.50\%
+Δ received 40: 3.00\%
+Δ received 45: 0.50\%
+
+Δ received AVG: 16.53\%
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_10_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hypertarget{resulting-plots-analysis}{%
+\subsubsection{Resulting plots
+analysis}\label{resulting-plots-analysis}}
+
+Given the plot above we can observe that \textbf{by increasing the
+distance between the nodes, both the number of packet used to flood the
+network and the percentage of nodes that actually received the flooded
+data decrease linearly}.
+
+We can also notice that CCBR on avarage uses \textbf{21\%} less packets
+to flood the network that the Broadcast version, while the percentage of
+nodes that actually receive the flooded data is \textbf{16\%} less that
+the Broadcast version.
+
+\hypertarget{section}{%
+\subsection{---------}\label{section}}
+
+\hypertarget{final-thoughts}{%
+\paragraph{Final Thoughts}\label{final-thoughts}}
+
+For each of the three configurations we compared, we observed that the
+two protocols had the same general behaviour. While the only thing
+differentiating the two is that CCBR has a lower rate of received
+packets it uses a less packets to flood the network. This can be useful
+on some applications like for example TinyDB that treats the sensor
+network as a database.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
