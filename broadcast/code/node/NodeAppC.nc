@@ -13,6 +13,5 @@ implementation {
   NodeC.AMSend -> AMSenderC;
   NodeC.Receive -> AMReceiverC;
   NodeC.AMControl -> ActiveMessageC;
-  NodeC.Packet -> AMSenderC;
   NodeC.Pool0 -> Pool0;
 }

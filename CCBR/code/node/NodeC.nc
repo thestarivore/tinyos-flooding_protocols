@@ -10,7 +10,6 @@ module NodeC @safe() {
     interface Receive;
     interface AMSend;
     interface SplitControl as AMControl;
-    interface Packet;
     interface Pool<message_t> as Pool0;
   }
 }
@@ -38,7 +37,7 @@ implementation {
   // event fired when AM is started
   event void AMControl.startDone(error_t err) {
     if (err == SUCCESS) {
-      // AM is started
+      // AM is startedpacket
       printf("NodeC: AM started on device %d.\n", TOS_NODE_ID);
     } else {
       // try to start AM another time

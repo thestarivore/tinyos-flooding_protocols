@@ -773,7 +773,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[1];
+  nx_uint8_t packet_content[];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -2698,13 +2698,13 @@ static void CC2420SpiP__SpiResource__granted(void );
 # 63 "/home/user/tinyos-main/tos/chips/cc2420/interfaces/CC2420Ram.nc"
 static cc2420_status_t CC2420SpiP__Ram__write(
 # 47 "/home/user/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint16_t arg_0x40b20174, 
+uint16_t arg_0x40b1f174, 
 # 63 "/home/user/tinyos-main/tos/chips/cc2420/interfaces/CC2420Ram.nc"
 uint8_t offset, uint8_t * data, uint8_t length);
 # 55 "/home/user/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 static cc2420_status_t CC2420SpiP__Reg__read(
 # 48 "/home/user/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x40b208dc, 
+uint8_t arg_0x40b1f8dc, 
 # 55 "/home/user/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 uint16_t *data);
 
@@ -2716,7 +2716,7 @@ uint16_t *data);
 
 static cc2420_status_t CC2420SpiP__Reg__write(
 # 48 "/home/user/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x40b208dc, 
+uint8_t arg_0x40b1f8dc, 
 # 63 "/home/user/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 uint16_t data);
 # 120 "/home/user/tinyos-main/tos/interfaces/Resource.nc"
@@ -3618,7 +3618,7 @@ uint8_t byte);
 # 39 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartConfigure.nc"
 static msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__default__getConfig(
 # 49 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartP.nc"
-uint8_t arg_0x410c51e4);
+uint8_t arg_0x410c41e4);
 # 79 "/home/user/tinyos-main/tos/interfaces/UartStream.nc"
 static void /*Msp430Uart1P.UartP*/Msp430UartP__0__UartStream__default__receivedByte(
 # 45 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartP.nc"
@@ -7899,7 +7899,7 @@ static inline int SerialPrintfP__Putchar__putchar(int c);
 # 39 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartConfigure.nc"
 static msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__getConfig(
 # 49 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartP.nc"
-uint8_t arg_0x410c51e4);
+uint8_t arg_0x410c41e4);
 # 181 "/home/user/tinyos-main/tos/chips/msp430/usart/HplMsp430Usart.nc"
 static void /*Msp430Uart1P.UartP*/Msp430UartP__0__Usart__enableTxIntr(void );
 #line 178
@@ -12799,13 +12799,13 @@ static inline msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__
 }
 
 # 39 "/home/user/tinyos-main/tos/chips/msp430/usart/Msp430UartConfigure.nc"
-inline static msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__getConfig(uint8_t arg_0x410c51e4){
+inline static msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__getConfig(uint8_t arg_0x410c41e4){
 #line 39
   union __nesc_unnamed4285 *__nesc_result;
 #line 39
 
 #line 39
-  switch (arg_0x410c51e4) {
+  switch (arg_0x410c41e4) {
 #line 39
     case /*PlatformSerialC.UartC*/Msp430Uart1C__0__CLIENT_ID:
 #line 39
@@ -12815,7 +12815,7 @@ inline static msp430_uart_union_config_t */*Msp430Uart1P.UartP*/Msp430UartP__0__
 #line 39
     default:
 #line 39
-      __nesc_result = /*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__default__getConfig(arg_0x410c51e4);
+      __nesc_result = /*Msp430Uart1P.UartP*/Msp430UartP__0__Msp430UartConfigure__default__getConfig(arg_0x410c41e4);
 #line 39
       break;
 #line 39

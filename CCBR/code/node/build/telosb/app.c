@@ -776,7 +776,7 @@ int putchar(int c);
 #line 4
 typedef nx_struct node_msg {
   nx_uint8_t packet_id;
-  nx_uint8_t packet_content[17];
+  nx_uint8_t packet_content[];
 } __attribute__((packed)) node_msg_t;
 
 enum __nesc_unnamed4253 {
@@ -1994,7 +1994,7 @@ static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(
 # 51 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x406cd3a0);
+uint8_t arg_0x406bf524);
 # 45 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static uint16_t /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Timer__get(void );
 # 39 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
@@ -2006,7 +2006,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 # 51 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x406cd3a0);
+uint8_t arg_0x406bf524);
 # 45 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static uint16_t /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__get(void );
 static bool /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__isOverflowPending(void );
@@ -2215,7 +2215,7 @@ error_t error);
 # 110 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(
 # 48 "/home/user/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x40782ed4, 
+am_id_t arg_0x40782b6c, 
 # 103 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -2228,7 +2228,7 @@ error_t error);
 # 75 "/home/user/tinyos-main/tos/interfaces/Send.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__send(
 # 46 "/home/user/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x40782538, 
+uint8_t arg_0x407821d0, 
 # 67 "/home/user/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -2242,7 +2242,7 @@ uint8_t len);
 #line 100
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(
 # 46 "/home/user/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x40782538, 
+uint8_t arg_0x407821d0, 
 # 96 "/home/user/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -3836,7 +3836,7 @@ static bool NodeC__Pool0__empty(void );
 static error_t NodeC__Pool0__put(
 #line 85
 NodeC__Pool0__t * newVal);
-# 23 "NodeC.nc"
+# 22 "NodeC.nc"
 message_t *NodeC__packet;
 uint16_t NodeC__packet_id;
 uint16_t NodeC__delay;
@@ -3876,7 +3876,7 @@ static inline void NodeC__AMControl__stopDone(error_t err);
 
 
 static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payload, uint8_t len);
-#line 107
+#line 106
 static inline void NodeC__Timer0__fired(void );
 
 
@@ -3991,7 +3991,7 @@ static inline error_t Msp430ClockP__Init__init(void );
 # 39 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(
 # 51 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x406cd3a0);
+uint8_t arg_0x406bf524);
 # 48 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Timer__overflow(void );
 # 62 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -4021,7 +4021,7 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 # 39 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(
 # 51 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x406cd3a0);
+uint8_t arg_0x406bf524);
 # 48 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__overflow(void );
 # 62 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -4630,7 +4630,7 @@ static inline void /*NodeAppC.AMSenderC.SenderC.AMQueueEntryP*/AMQueueEntryP__0_
 # 80 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(
 # 48 "/home/user/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x40782ed4, 
+am_id_t arg_0x40782b6c, 
 # 80 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -4647,7 +4647,7 @@ uint8_t len);
 # 100 "/home/user/tinyos-main/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(
 # 46 "/home/user/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x40782538, 
+uint8_t arg_0x407821d0, 
 # 96 "/home/user/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -8453,9 +8453,9 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 }
 
 # 39 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x406cd3a0){
+inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x406bf524){
 #line 39
-  switch (arg_0x406cd3a0) {
+  switch (arg_0x406bf524) {
 #line 39
     case 0:
 #line 39
@@ -8483,7 +8483,7 @@ inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(ui
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x406cd3a0);
+      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x406bf524);
 #line 39
       break;
 #line 39
@@ -14468,13 +14468,13 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updat
 }
 
 # 80 "/home/user/tinyos-main/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x40782ed4, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x40782b6c, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = CC2420ActiveMessageP__AMSend__send(arg_0x40782ed4, addr, msg, len);
+  __nesc_result = CC2420ActiveMessageP__AMSend__send(arg_0x40782b6c, addr, msg, len);
 #line 80
 
 #line 80
@@ -14640,15 +14640,15 @@ inline static error_t NodeC__AMSend__send(am_addr_t addr, message_t * msg, uint8
 #line 80
 }
 #line 80
-# 107 "NodeC.nc"
+# 106 "NodeC.nc"
 static inline void NodeC__Timer0__fired(void )
-#line 107
+#line 106
 {
   if (NodeC__AMSend__send(AM_BROADCAST_ADDR, NodeC__packet, sizeof(node_msg_t )) == SUCCESS) {
       printf("NodeC: Broadcasting packet %d\n", NodeC__packet_id);
     }
   else 
-#line 110
+#line 109
     {
       printf("NodeC: An error occured during the broadcast\n");
     }
@@ -14925,9 +14925,9 @@ inline static bool NodeC__Pool0__empty(void ){
 #line 61
 }
 #line 61
-# 61 "NodeC.nc"
+# 60 "NodeC.nc"
 static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payload, uint8_t len)
-#line 61
+#line 60
 {
   printf("NodeC: received packet of length %d.\n", len);
 
@@ -14936,7 +14936,7 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
       return bufPtr;
     }
   else 
-#line 67
+#line 66
     {
       node_msg_t *nm = (node_msg_t *)payload;
 
@@ -14950,7 +14950,7 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
           return bufPtr;
         }
       else 
-#line 78
+#line 77
         {
 
           if (__nesc_ntoh_uint8(nm->packet_id.nxdata) == NodeC__packet_id) {
@@ -14960,14 +14960,14 @@ static inline message_t *NodeC__Receive__receive(message_t *bufPtr, void *payloa
               return bufPtr;
             }
           else 
-#line 85
+#line 84
             {
               if (NodeC__locked) {
                   printf("NodeC: Radio is locked\n");
                   return bufPtr;
                 }
               else 
-#line 89
+#line 88
                 {
                   NodeC__packet_id = __nesc_ntoh_uint8(nm->packet_id.nxdata);
 
@@ -17543,9 +17543,9 @@ static inline void CC2420CsmaP__sendDone_task__runTask(void )
   CC2420CsmaP__Send__sendDone(CC2420CsmaP__m_msg, packetErr);
 }
 
-# 50 "NodeC.nc"
+# 49 "NodeC.nc"
 static inline void NodeC__AMControl__stopDone(error_t err)
-#line 50
+#line 49
 {
 }
 
@@ -17579,16 +17579,16 @@ inline static error_t NodeC__AMControl__start(void ){
 #line 104
 }
 #line 104
-# 39 "NodeC.nc"
+# 38 "NodeC.nc"
 static inline void NodeC__AMControl__startDone(error_t err)
-#line 39
+#line 38
 {
   if (err == SUCCESS) {
 
       printf("NodeC: AM started on device %d.\n", TOS_NODE_ID);
     }
   else 
-#line 43
+#line 42
     {
 
       NodeC__AMControl__start();
@@ -17970,9 +17970,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__send
 }
 
 # 100 "/home/user/tinyos-main/tos/interfaces/Send.nc"
-inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x40782538, message_t * msg, error_t error){
+inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x407821d0, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x40782538) {
+  switch (arg_0x407821d0) {
 #line 100
     case 0U:
 #line 100
@@ -17982,7 +17982,7 @@ inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint
 #line 100
     default:
 #line 100
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x40782538, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x407821d0, msg, error);
 #line 100
       break;
 #line 100
@@ -19278,9 +19278,9 @@ inline static /*BusyWaitMicroC.BusyWaitCounterC*/BusyWaitCounterC__0__Counter__s
 #line 64
 }
 #line 64
-# 32 "NodeC.nc"
+# 31 "NodeC.nc"
 static inline void NodeC__Boot__booted(void )
-#line 32
+#line 31
 {
   NodeC__AMControl__start();
   srand(TOS_NODE_ID);
@@ -20627,9 +20627,9 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 }
 
 # 39 "/home/user/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x406cd3a0){
+static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x406bf524){
 #line 39
-  switch (arg_0x406cd3a0) {
+  switch (arg_0x406bf524) {
 #line 39
     case 0:
 #line 39
@@ -20681,7 +20681,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t a
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x406cd3a0);
+      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x406bf524);
 #line 39
       break;
 #line 39
@@ -22045,16 +22045,16 @@ static am_addr_t ActiveMessageAddressC__amAddress(void )
   return myAddr;
 }
 
-# 116 "NodeC.nc"
+# 115 "NodeC.nc"
 static void NodeC__AMSend__sendDone(message_t *bufPtr, error_t error)
-#line 116
+#line 115
 {
   if (NodeC__packet == bufPtr) {
       if (error == SUCCESS) {
           printf("NodeC: Packet sent\n");
         }
       else 
-#line 120
+#line 119
         {
           printf("NodeC: Packet send error\n");
         }

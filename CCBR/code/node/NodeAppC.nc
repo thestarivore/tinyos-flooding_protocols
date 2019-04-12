@@ -15,6 +15,5 @@ implementation {
   NodeC.Receive -> AMReceiverC;
   NodeC.Timer0 -> Timer0;
   NodeC.AMControl -> ActiveMessageC;
-  NodeC.Packet -> AMSenderC;
   NodeC.Pool0 -> Pool0;
 }

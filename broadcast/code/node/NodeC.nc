@@ -7,7 +7,6 @@ module NodeC @safe() {
     interface Receive;
     interface AMSend;
     interface SplitControl as AMControl;
-    interface Packet;
     interface Pool<message_t> as Pool0;
   }
 }
@@ -21,7 +20,7 @@ implementation {
   bool locked;
   uint8_t counter = 0;
   
-  /* 
+  /* AM_RADIO_NODESAM_RADIO_NODES
   * Events
   */  
   // event fired when the device is booted
